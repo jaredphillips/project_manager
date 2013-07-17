@@ -40,6 +40,13 @@ end
 
 group :development do
 	gem 'meta_request'
+	gem 'better_errors'
+	gem 'pry-rails'
+end
+
+group :test do 
+	gem 'factory_girl_rails'
+	gem 'capybara'
 end
 
 # Use ActiveModel has_secure_password
