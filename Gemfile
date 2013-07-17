@@ -12,6 +12,9 @@ gem "sorcery", "~> 0.8.2"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
+# Use Foundation for styling
+gem "zurb-foundation", "~> 4.2.3"
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
