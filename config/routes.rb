@@ -4,7 +4,11 @@ ProjectManager::Application.routes.draw do
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
   
-  resources :users
+  resources :users do
+    resources :projects
+  end
+
+
   resources :sessions, except: [:destroy, :new]
 
   root to: "static_pages#home"
