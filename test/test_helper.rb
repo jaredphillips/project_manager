@@ -18,6 +18,12 @@ class ActionDispatch::IntegrationTest
   # Make the Capybara DSL available in all integration tests
   include Capybara::DSL
 
-  # Crowdfunder is to be changed to the name of your app
   Capybara.app = ProjectManager::Application
+
+  def signed_in_user_helper
+    user = FactoryGirl.create(:user)
+    visit '/login'
+    
+
+
 end
