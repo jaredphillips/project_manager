@@ -14,6 +14,8 @@ class UserFlowTest < ActionDispatch::IntegrationTest
 		click_link('Sign up')
 		assert_equal signup_path, current_path, "After clicking sign up, user should be on the new user page"
 		user = FactoryGirl.build(:user)
+		fill_in "user[first_name]", with: user.first_name
+		fill_in "user[last_name]", with: user.last_name
 		fill_in "user[email]", with: user.email
 		fill_in "user[password]", with: user.password
 		click_button('Create Account')
@@ -25,6 +27,6 @@ class UserFlowTest < ActionDispatch::IntegrationTest
 		visit '/signup'
 		click_button('Create Account')
 		assert_equal users_path, current_path
-		assert has_no_content?('Logged in as:'), "For now, I want to see user's email. This test will break in the future"
+		assert has_no_content?('Logged in as:'), "After failed sign in, user should not see 'Logged in as: '"
 	end
 end
