@@ -30,7 +30,7 @@ class UserFlowTest < ActionDispatch::IntegrationTest
 		assert has_no_content?('Logged in as:'), "After failed sign in, user should not see #{user.first_name}"
 	end
 
-	test "user can add a project after signing up" do
+	test "user can add a picture after signing up" do
 		user = setup_signed_in_user
     assert_equal user_path(user), current_path
     assert has_content?('Upload a picture'), "Signed in user should see a link to upload a photo"	

@@ -2,3 +2,4 @@
 <h1>Welcome, <%= @user.first_name %></h1>
 <h3>Let's get started</h3>
 <%= link_to "Upload a picture", '#' %>
+<%= link_to "Create a new project!", new_user_project_path(@user) %>
