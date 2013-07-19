@@ -17,13 +17,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body> 
-  <%= render 'layouts/navbar' %>
-  <%= render 'layouts/alert_messages' %>
-  <div class="row">
-    <div class="large-2 columns"></div>
-    <div class="large-8 columns"><%= yield %></div>
-    <div class="large-2 columns"></div>
-  </div>    
+  <div class="wrapper">
+    <%= render 'layouts/navbar' %>
+    <%= render 'layouts/alert_messages' %>
+    <div class="row">
+      <div class="large-2 columns"></div>
+      <div class="large-8 columns"><%= yield %></div>
+      <div class="large-2 columns"></div>
+    </div>    
+    <div class="push"></div>
+  </div>
   <%= render 'layouts/footer' %>
   <%= javascript_include_tag "application" %>
 </body>
