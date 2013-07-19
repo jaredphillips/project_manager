@@ -1,7 +1,7 @@
-<div class="panel">
+<div class="panel radius">
 	<% if current_user.avatar.url == nil %>
 	  <%= image_tag "no_avatar.jpg" %>
-		<p>Uploading a photo helps the team to visualize those involved</p>
+		<p>Uploading a photo helps the team to visualize those involved in the project</p>
 		<%= form_for @user, :html => { :multipart => true } do |f| %>
 		  <p>
 		    <%= f.file_field :avatar %>
