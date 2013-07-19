@@ -34,5 +34,10 @@ class UserFlowTest < ActionDispatch::IntegrationTest
 		user = setup_signed_in_user
     assert_equal user_path(user), current_path
     assert has_content?('Upload a picture'), "Signed in user should see a link to upload a photo"	
+    click_link('Upload a picture')
+    path = File.join(Rails.root, 'app', 'assets', 'images', "me.jpg")
+    attach_file("image[file]", path)
+    click_button("Upload Image")
+    page.assert_selector '.image', count: 1 
 	end
 end
