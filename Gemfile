@@ -15,6 +15,9 @@ gem 'sass-rails', '~> 4.0.0'
 # Use Foundation for styling
 gem "zurb-foundation", "~> 4.2.3"
 
+# Using carrierwave for uploading of all sorts of junk
+gem "carrierwave", "~> 0.9.0"
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 

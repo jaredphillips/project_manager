@@ -18,9 +18,19 @@ class UsersController < ApplicationController
     @projects = Project.where(user_id: @user)  
   end
 
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      flash[:notice] = "Successfully updated painting."
+      redirect_to user_path
+    else
+      redirect_back_or_to user_path
+    end
+  end
+
 private
 
 	def user_params
-	  params.require(:user).permit(:first_name, :last_name, :email, :password)
+	  params.require(:user).permit(:first_name, :last_name, :email, :password, :avatar)
   end 
 end

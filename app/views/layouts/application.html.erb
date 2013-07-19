@@ -21,13 +21,13 @@
   <div class="wrapper">
     <%= render 'layouts/navbar' %>
     <div class="row">
-      <div class="small-2 large-2 columns">
-        <% if current_user %>
+      <div class="large-2 columns">
+        <% if logged_in? %>
           <%= render 'layouts/user_left_side' %>
         <% end %>
       </div>
-      <div class="small-8 large-8 columns"><%= yield %></div>
-      <div class="small-2 large-2 columns">
+      <div class="large-7 columns"><%= yield %></div>
+      <div class="large-3 columns">
         <% if current_user %>
           <%= render 'layouts/user_right_side' %>
         <% end %>
