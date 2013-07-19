@@ -7,9 +7,24 @@ class ProjectsController < ApplicationController
   end
 
   def create
+    @project = Project.new(
+      user_id: params[:user_id],
+      title: params[:project][:title],
+      objective: params[:project][:objective],
+      due_date: params[:project][:due_date]
+    )
+
+    if @project.save 
+      # UserMailer.reservation_confirmation(current_user).deliver
+      flash[:notice] = "Project created!"
+      redirect_to user_path(@user)
+    else
+      render 'new'
+    end
   end
 
   def index
+    @projects = Project.where(user_id: @user)
   end
 
   def show

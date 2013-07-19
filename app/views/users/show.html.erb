@@ -1,5 +1,11 @@
+</br>
 
-<h1>Welcome, <%= @user.first_name %></h1>
-<h3>Let's get started</h3>
-<%= link_to "Upload a picture", '#' %>
-<%= link_to "Create a new project!", new_user_project_path(@user) %>
+<%= link_to "Create a new project!", new_user_project_path(@user), class: "medium button success round" %></br>
+
+<% @projects.each do |project| %>
+  <div class="container">
+		<h2><%= project.title %></h2>
+		<p><em>Objective: </em><%= project.objective %></p>
+		<p><em>Due Date:</em> <%= project.due_date %></p>
+	</div>
+<% end %>

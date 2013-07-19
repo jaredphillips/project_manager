@@ -1,8 +1,7 @@
 <h1>Sign Up</h1>
-
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
-    <div class="error_messages">
+    <div class="error">
       <h2>Form is invalid</h2>
       <ul>
         <% for message in @user.errors.full_messages %>
@@ -32,6 +31,7 @@
     <%= f.password_field :password_confirmation %>
   </div>
   <div class="actions">
-    <%= f.submit "Create Account" %>
+    <%= f.submit "Create Account", class: "medium button success round" %>
+
   </div>
 <% end %>
