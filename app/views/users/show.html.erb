@@ -3,8 +3,10 @@
 <h2>Projects on the Go!</h2>
 <div class="projects" id="incomplete_projects">
 	<% @projects.each do |project| %>
-	<p>
-		<%= project.title %>
-	</p>
+	<ul>
+		<ol><strong><%= project.title %></strong></ol>
+		<ol><%= project.objective %></ol>
+		<ol><%= project.due_date %></ol>	
+	</ul>
 	<% end %>
 </div>
