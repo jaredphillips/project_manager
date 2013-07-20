@@ -17,9 +17,13 @@ class ProjectsController < ApplicationController
     if @project.save 
       # UserMailer.reservation_confirmation(current_user).deliver
       flash[:notice] = "Project created!"
-      redirect_to user_path(@user)
     else
       render 'new'
+    end
+    
+    respond_to do |format|
+      format.html { redirect_to project_url }
+      format.js
     end
   end
 
