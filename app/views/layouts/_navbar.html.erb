@@ -1,25 +1,15 @@
-<nav class="top-bar">
-  <ul class="title-area">
-    <!-- Title Area -->
-    <li class="name">
-      <h1><%= link_to "Me To You", root_path %></h1>
-    </li>
-    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
-
-  <section class="top-bar-section">
-
-    <!-- Right Nav Section -->
-    <ul class="right">
-      <li class="divider"></li>
-      <li class="divider show-for-small"></li>
-      <li class="has-form">
-      	<% if logged_in? %>
-          <%= link_to 'Log out', :logout, { class: "medium success button round", method: :get } %>
-	      <% end %>
+<div class="navbar navbar-static-top">
+  <div class="navbar-inner">
+    <a class="brand" href="#">Me To You</a>
+    <ul class="nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Link</a></li>
+      <li>
+        <% if logged_in? %>
+          <%= link_to 'Log out', :logout %>
+        <% end %>
       </li>
     </ul>
-  </section>
-</nav>
+  </div>
+</div>
 

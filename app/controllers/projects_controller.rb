@@ -22,7 +22,7 @@ class ProjectsController < ApplicationController
     end
     
     respond_to do |format|
-      format.html { redirect_to project_url }
+      format.html { redirect_to user_path }
       format.js
     end
   end

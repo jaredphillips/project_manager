@@ -12,8 +12,9 @@ gem "sorcery", "~> 0.8.2"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
-# Use Foundation for styling
-gem "zurb-foundation", "~> 4.2.3"
+# Yep, half the internet is styled using Twitter Bootstrap
+gem "twitter-bootstrap-rails", "~> 2.2.7"
+
 
 # Using carrierwave for uploading of all sorts of junk
 gem "carrierwave", "~> 0.9.0"
@@ -28,7 +29,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+ gem 'therubyracer', platforms: :ruby
+
+# LESS support for rails
+ gem "less-rails", "~> 2.3.3"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
