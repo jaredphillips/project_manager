@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <head>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 	<meta charset="utf-8" />
 	<title>Me To You</title>
 	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
@@ -8,20 +11,9 @@
 </head>
 <body>
   <%= render 'layouts/navbar' %>
- <!--    <div class="row">
-      <div class="large-2 columns">
-        <% if logged_in? %>
-          <%= render 'layouts/user_left_side' %>
-        <% end %>
-      </div>
-      <div class="large-7 columns"><%= yield %></div>
-      <div class="large-3 columns">
-        <% if current_user %>
-          <%= render 'layouts/user_right_side' %>
-        <% end %>
-      </div>
-    </div>    
-  </div>
-  <%= render 'layouts/footer' %> -->
+  <div class="container">
+    <%= yield %>
+  </div>  
+  <%= render 'layouts/footer' %>
 </body>
 </html>

@@ -1,37 +1,43 @@
-<h1>Sign Up</h1>
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <div class="error">
-      <h2>Form is invalid</h2>
-      <ul>
-        <% for message in @user.errors.full_messages %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div class="field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Create Account", class: "medium button success round" %>
+<div class="center hero-unit">  
+  <h1>Sign Up</h1></br>
+  <%= form_for @user do |f| %>
+    <form class="form-horizontal">
+      <div class="control-group">
 
+        <div class="controls">
+          <label class="control-label" for="inputName">First Name</label>
+          <%= f.text_field :first_name, { type: "first_name", id: "inputFirstName"} %>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="inputName">Last Name</label>   
+        <div class="controls">
+          <%= f.text_field :last_name, { type: "last_name", id: "inputLastName" } %>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="inputEmail">Email</label>
+        <div class="controls">
+          <%= f.text_field :email, { type: "text", id: "inputEmail" } %>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="inputEmail">Password</label>
+        <div class="controls">
+          <%= f.password_field :password, { type: "password", id: "inputPassword" } %>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="inputEmail">Password Confirmation</label>
+        <div class="controls">
+          <%= f.password_field :password_confirmation, { type: "password", id: "inputPassword" } %>
+        </div>
+      </div>
+    <div class="control-group">
+      <div class="button">
+        <%= f.submit "Create Account", { class: "default-buttons create_account" } %>
+      </div>
+    </div>
+    <% end %>
   </div>
-<% end %>
+</div>

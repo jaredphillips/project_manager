@@ -1,15 +1,25 @@
-<h1>Log in</h1>
-
-<%= form_tag sessions_path do %>  
-  <div class="field">
-    <%= label_tag :email %>
-    <%= text_field_tag :email, params[:email] %>
+<div class="center hero-unit">  
+  <h1>Welcome back</h1></br>
+  <%= form_tag sessions_path do %>
+    <form class="form-horizontal">
+      <div class="control-group">
+        <label class="control-label" for="inputEmail">Email</label>
+        <div class="controls">
+          <%= text_field :email, { type: "email", id: "inputEmail" } %>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="inputEmail">Password</label>
+        <div class="controls">
+          <%= password_field :password, { type: "password", id: "inputPassword" } %>
+        </div>
+      </div>
+    <div class="control-group">
+      <div class="button">
+        <%= submit_tag "Sign in", { class: "default-buttons login-button" } %>
+      </div>
+    </div>
+    <% end %>
+      <p>You should bookmark this page for faster access in the future</p>
   </div>
-  <div class="field">
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </div>
-  <div class="actions">
-    <%= submit_tag "Log in", class: "medium button success round"%>
-  </div>
-<% end %>
+</div>

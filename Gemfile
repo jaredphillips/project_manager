@@ -12,6 +12,9 @@ gem "sorcery", "~> 0.8.2"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
+# Holy shit
+gem 'binding_of_caller'
+
 # Yep, half the internet is styled using Twitter Bootstrap
 gem "twitter-bootstrap-rails", "~> 2.2.7"
 
