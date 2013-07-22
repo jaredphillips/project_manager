@@ -4,16 +4,34 @@
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	<meta charset="utf-8" />
+  <link href='http://fonts.googleapis.com/css?family=Norican' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
 	<title>Me To You</title>
 	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render 'layouts/navbar' %>
-  <div class="container">
-    <%= yield %>
-  </div>  
-  <%= render 'layouts/footer' %>
+  <div class="wrapper">
+    <%= render 'layouts/navbar' %>
+    <div class="container">
+      <div class="row">
+        <% if logged_in? %>
+          <div class="span3">
+            <%= render 'layouts/user_left_side' %>
+          </div>
+          <div class="span6">    
+            <%= yield %>
+          </div>
+          <div class="span3">
+            <%= render 'layouts/user_right_side' %>
+          </div>
+        <% else %>
+          <%= yield %>
+        <% end %>
+      </div>
+    </div>
+    <%= render 'layouts/footer' %>
+  </div>
 </body>
 </html>

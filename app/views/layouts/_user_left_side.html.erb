@@ -13,7 +13,11 @@
 	<% else %>
 	  <%= image_tag current_user.avatar.url %></br></br>
 	<% end %>
-	<h5><%= current_user.first_name %> <%= current_user.last_name %></h5>
-	<p>Outstanding projects  </p>
+	<h5>Hey, <%= current_user.first_name %></h5>
+  <div class="default-buttons smaller logout">
+		<% if logged_in? %>
+	    <%= link_to 'Logout', :logout %>  
+	  <% end %>          
+	</div>
 </div>
 

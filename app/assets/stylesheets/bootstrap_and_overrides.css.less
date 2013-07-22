@@ -48,21 +48,29 @@ textarea {
 
 .center {
   text-align: center;
-  h1 {
+} 
+
+.center h1 {
     margin-bottom: 10px;
-  }
 }
+
+
 
 /* Navbar */
 
-.nav-title-container {
-}
-
 .navbar-inner {
-  background-color: #FFF8E3; /* background color will be black for all browsers */
+  background-color: #FFF8E3; /* background color */
   background-image: none;
   background-repeat: no-repeat;
   filter: none;
+  height: 30px;
+  margin: 0 auto;
+}
+
+.navbar-logo {
+  margin-top: 20px;
+  font-family: 'Norican', cursive;
+  font-size: 30px;
 }
 
 
@@ -78,6 +86,13 @@ textarea {
   font-size: 14px;
   color: white;
   transition: 0.4s;
+}
+
+.smaller {
+  height: 8px;
+  width: 18px;
+  font-size: 12px;
+
 }
 
 .signup:hover {
@@ -107,37 +122,61 @@ textarea {
 
 /* footer */
 
+/* footer */
+
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
-  a {
-    color: $gray;
-    &:hover {
-      color: $grayDarker;
-    }
-  }
-  small {
-    float: left;
-  }
-  ul {
-    float: right;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 10px;
-    }
-  }
+  border-top: 1px solid #eaeaea;
+  color: #999;
+  margin-left: 6%;
+  margin-right: 6%;
+  position: fixed; 
+  left: 0; 
+  right: 0; 
+  bottom: 0;
 }
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
+}
+
+
+/* Errors */
 
 #error_explanation {
   color: #f00;
-  ul {
-    list-style: none;
-    margin: 0 0 18px 0;
-  }
 }
+ 
+#error_explanation ul {
+  list-style: none;
+  margin: 0 0 18px 0;
+}
+
+.font {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 30px;
+  color: black;
+}
+
 
 
 
