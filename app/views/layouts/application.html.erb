@@ -4,8 +4,6 @@
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	<meta charset="utf-8" />
-  <link href='http://fonts.googleapis.com/css?family=Norican' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
 	<title>Me To You</title>
 	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -13,10 +11,17 @@
 </head>
 <body>
   <div class="wrapper">
+
     <%= render 'layouts/navbar' %>
+
     <div class="container">
-      <div class="row">
-        <% if logged_in? %>
+      
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+
+      <% if logged_in? %>
+        <div class="row">
           <div class="span3">
             <%= render 'layouts/user_left_side' %>
           </div>
@@ -30,6 +35,7 @@
           <%= yield %>
         <% end %>
       </div>
+
     </div>
     <%= render 'layouts/footer' %>
   </div>

@@ -1,12 +1,14 @@
-<%= link_to "Create a new project!", new_user_project_path(@user), id: "new_link", remote: true	 %>
-
-<h2>Projects on the Go!</h2>
-<div class="projects" id="incomplete_projects">
-	<% @projects.each do |project| %>
-	<ul>
-		<ol><strong><%= project.title %></strong></ol>
-		<ol><%= project.objective %></ol>
-		<ol><%= project.due_date %></ol>	
-	</ul>
-	<% end %>
+<div class="dashboard">
+	<div class="page-header">
+		<h4>Dashboard<small>   Current Projects on the go.</small></h4>
+	</div>
+	<div class="projects" id="incomplete_projects">
+		<% @projects.each do |project| %>
+		<ul>
+			<ol><strong><%= project.title %></strong></ol>
+			<ol><%= project.objective %></ol>
+			<ol><%= project.due_date %></ol>	
+		</ul>
+		<% end %>
+	</div>
 </div>

@@ -1,23 +1,32 @@
-<div class="panel radius ">
-	<% if current_user.avatar.url == nil %>
-	  <%= image_tag "no_avatar.jpg" %>
-		<p>Uploading a photo helps the team to visualize those involved in the project</p>
-		<%= form_for @user, :html => { :multipart => true } do |f| %>
-		  <p>
-		    <%= f.file_field :avatar %>
-		  </p>
-		  <p>
-		  	<%= f.submit %>
-		  </p>
-		<% end %>
-	<% else %>
-	  <%= image_tag current_user.avatar.url %></br></br>
-	<% end %>
-	<h5>Hey, <%= current_user.first_name %></h5>
-  <div class="default-buttons smaller logout">
-		<% if logged_in? %>
-	    <%= link_to 'Logout', :logout %>  
-	  <% end %>          
+<div class="user-left-side">
+	<div class="center">
+	  <div class="user-left-controls">
+	  	<div class="page-header">
+				<h4><%= @user.first_name %> <%= @user.last_name %><small> Honda of Canada</small></h4>
+			</div>
+
+			<div class="user-left-photo">
+			<!-- Image Uploader -->
+			
+			<% if current_user.avatar.url == nil %>
+			  <%= image_tag "no_avatar.jpg" %>
+				<%= form_for @user, html: { :multipart => true } do |f| %>
+				    <%= f.file_field :avatar %>
+				  	<%= f.submit "Upload your image", { class: "default-small-button" } %>
+				<% end %>
+			<% else %>
+			  <%= image_tag current_user.avatar.url %></br></br>
+			<% end %>
+		</div>
+			<div class="button">
+			  <%= link_to "New Project", new_user_project_path(@user), { class: "default-small-button" } %>
+			</div>
+			<div class="button">
+				<%= link_to 'Add Team Members', '#', { class: "default-small-button" } %>  
+			</div>
+			<div class="button">
+				<%= link_to 'Logout', :logout, { class: "default-small-button" } %>  
+			</div>
+	  </div>  
 	</div>
 </div>
-

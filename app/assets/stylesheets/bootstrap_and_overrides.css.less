@@ -26,17 +26,21 @@
 // Example:
 // @linkColor: #ff0000;
 
-@navbarHeight: 50px;
+/* Navbar */
 
-/* universal */
+@navbarHeight: 40px;
+
+/* Universal */
 
 html {
   overflow-y: scroll;
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 110px;
+  background-color: #bdc3c7;
 }
+
 
 section {
   overflow: auto;
@@ -55,29 +59,15 @@ textarea {
 }
 
 
-
-/* Navbar */
-
-.navbar-inner {
-  background-color: #FFF8E3; /* background color */
-  background-image: none;
-  background-repeat: no-repeat;
-  filter: none;
-  height: 30px;
-  margin: 0 auto;
-}
-
-.navbar-logo {
-  margin-top: 20px;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
-  font-size: 30px;
-  color: #A1E8D9;
+.page-header small {
+  color: white;
 }
 
 
+
+/* Default Buttons */
 
 .default-buttons {
-	background-color: #466075;
 	padding: 16px 60px;
 	border-radius: 8px;
 	outline: none;
@@ -85,89 +75,58 @@ textarea {
   box-shadow:none !important;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-size: 14px;
-  color: white;
   transition: 0.4s;
 }
 
-.smaller-button {
-  height: 8px;
-  width: 18px;
+.default-small-buttons li{
+  
+  outline: none;
+  border:none !important;
+  box-shadow:none !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-size: 12px;
+  transition: 0.4s;
 
+}
+
+.signup {
+  transition: 0.4s;
+  text-decoration: none;
+  background-color: #e74c3c;
 }
 
 .signup:hover {
 	transition: 0.4s;
   text-decoration: none;
-  background-color: #96CA2D;
+  background-color: #c0392b;
+}
+
+.login {
+  transition: 0.4s;
+  text-decoration: none;
+  background-color: #2ecc71;
 }
 
 .login:hover {
 	transition: 0.4s;
 	text-decoration: none;
-  background-color: #4BB5C1;
-
+  background-color: #27ae60;
 }
 
-.create_account:hover {
+.create-account:hover {
 	transition: 0.4s;
 	text-decoration: none;
 	background-color: #4BB5C1;
 }
 
-.login-button:hover {
-	transition: 0.4s;
-	text-decoration: none;
-	background-color: #FF712C;
-}
-
-/* footer */
-
-/* footer */
-
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #999;
-  margin-left: 6%;
-  margin-right: 6%;
-  position: fixed; 
-  left: 0; 
-  right: 0; 
-  bottom: 0;
-}
-
-footer a {
-  color: #555;
-}
-
-footer a:hover {
-  color: #222;
-}
-
-footer small {
-  float: left;
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 10px;
-}
-
 
 /* Errors */
 
-#error_explanation {
+#error-explanation {
   color: #f00;
 }
  
-#error_explanation ul {
+#error-explanation ul {
   list-style: none;
   margin: 0 0 18px 0;
 }

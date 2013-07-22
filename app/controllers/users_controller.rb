@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+
+  def index
+  end
+  
   def new
   	@user = User.new
   end
@@ -6,8 +10,9 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
   	if @user.save
+      flash[:success] = "Welcome #{@user.first_name}!"
       auto_login(@user)
-  		redirect_to @user, notice: "Signed up!"
+  		redirect_to user_path(@user)
   	else
   		render :new
   	end
@@ -21,7 +26,6 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      flash[:notice] = "Successfully updated painting."
       redirect_to user_path
     else
       redirect_back_or_to user_path

@@ -9,32 +9,32 @@ class UserFlowTest < ActionDispatch::IntegrationTest
 		assert has_no_content?('Logout'), "User not logged in shouldn't see Logout"
 	end 
 
-	test "successful sign up" do
+	test "user can successful sign up" do
 		visit '/'
 		click_link('Sign up')
-		assert_equal signup_path, current_path, "After clicking sign up, user should be on the new user page"
 		user = FactoryGirl.build(:user)
 		fill_in "user[first_name]", with: user.first_name
 		fill_in "user[last_name]", with: user.last_name
 		fill_in "user[email]", with: user.email
 		fill_in "user[password]", with: user.password
-		click_button('Create Account')
-		assert has_content?(user.first_name), "For now, I want to see user's email. This test will break in the future"
+		click_button('Get Started')
+		assert_equal user, current_path
 	end
 
 	test "unsuccessful sign up" do
-		user = FactoryGirl.build(:user, email: "")
 		visit '/signup'
-		click_button('Create Account')
-		assert_equal users_path, current_path
-		assert has_no_content?('Logged in as:'), "After failed sign in, user should not see #{user.first_name}"
+		user = FactoryGirl.build(:user)
+		fill_in "user[email]", with: user.email
+		click_button('Get Started')
+		assert_equal signup_path, current_path
 	end
 
 	test "user can add a picture after signing up" do
 		user = setup_signed_in_user
-    assert_equal user_path(user), current_path
+		visit user_path(user)
+		print page.html
     path = File.join(Rails.root, 'app', 'assets', 'images', "me.jpg")
-    attach_file("user[avatar]", path)
+    attach_file("user_avatar[user_avatar]", path)
     click_button("Update User")
     assert_selector('img', count: 1) 
 	end

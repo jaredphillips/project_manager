@@ -31,12 +31,12 @@ class ActionDispatch::IntegrationTest
   end
 
   def setup_signed_in_user
-    attributes_for_user = FactoryGirl.attributes_for(:user)
-    user = FactoryGirl.create(:user, attributes_for_user)
+    pass = "this-is-a-password"
+    user = FactoryGirl.create :user, password: pass
     visit '/login'
-    fill_in 'email', with: user.email
-    fill_in 'password', with: attributes_for_user[:password]
-    click_button 'Log in'
+    fill_in "user_email", with: user.email
+    fill_in "user_password", with: pass
+    click_button "Log in"
     user
   end
 end

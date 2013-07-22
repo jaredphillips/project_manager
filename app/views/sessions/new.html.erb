@@ -1,26 +1,28 @@
-<div class="center hero-unit">  
-  <h1>Welcome back</h1></br>
-  <%= form_tag sessions_path do %>
-    <form class="form-horizontal">
-      <%= render 'layouts/flash' %>
+<div class="center"> 
+  <div class="center hero-unit"> 
+    <h1>Welcome back</h1></br>
+    <%= form_for(@user, url: sessions_path) do |f| %>
+      <form class="form-horizontal">
+        <%= render 'layouts/flash' %>
+        <div class="control-group">
+          <label class="control-label" for="inputEmail">Email</label>
+          <div class="controls">
+            <%= f.text_field :email %> 
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="inputEmail">Password</label>
+          <div class="controls">  
+            <%= f.password_field :password %> 
+          </div>
+        </div>
       <div class="control-group">
-        <label class="control-label" for="inputEmail">Email</label>
-        <div class="controls">
-          <%= text_field :email, { class: "input-xlarge alert alert-error", type: "text" } %>
+        <div class="button">
+          <%= f.submit "Log in", { class: "default-buttons login-button" } %>
         </div>
       </div>
-      <div class="control-group">
-        <label class="control-label" for="inputEmail">Password</label>
-        <div class="controls">  
-          <%= password_field :password, { class: "input-xlarge alert alert-error", type: "password" } %>
-        </div>
-      </div>
-    <div class="control-group">
-      <div class="button">
-        <%= submit_tag "Sign in", { class: "default-buttons login-button" } %>
-      </div>
+      <% end %>
+        <p>You should bookmark this page for faster access in the future</p>
     </div>
-    <% end %>
-      <p>You should bookmark this page for faster access in the future</p>
   </div>
 </div>
