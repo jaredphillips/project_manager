@@ -10,34 +10,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="wrapper">
-
-    <%= render 'layouts/navbar' %>
-
-    <div class="container">
-      
-      <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-      <% end %>
-
-      <% if logged_in? %>
-        <div class="row">
-          <div class="span3">
-            <%= render 'layouts/user_left_side' %>
-          </div>
-          <div class="span6">    
-            <%= yield %>
-          </div>
-          <div class="span3">
-            <%= render 'layouts/user_right_side' %>
-          </div>
-        <% else %>
-          <%= yield %>
-        <% end %>
+  <%= render 'layouts/navbar' %>
+    
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %>
       </div>
+    <% end %>
 
-    </div>
-    <%= render 'layouts/footer' %>
+  <div class="container">
+    <%= yield %>
   </div>
 </body>
 </html>

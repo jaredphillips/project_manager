@@ -3,17 +3,15 @@
   <div class="field"> 
 	  <%= f.label :title, "Title: " %>
 	  <%= f.text_field :title %>
-	</div></br>
+	</div>
   <div class="field">	  
   	<%= f.label :objective, "Objective: " %>
 	  <%= f.text_field :objective %>
-	</div></br>
-  <div class="date_field">
-	  <div class="field">			
-	  	<%= f.label :due_date %>
-			<%= f.date_field :due_date %>
-		 </div></br>
 	</div>
+	<div class="date-field">			
+  	<%= f.label :due_date %>
+		<%= f.date_field :due_date %>
+  </div>
 	<div class="action">
 		<%= f.submit "Get Started", class: "medium button success round" %>
 	</div>

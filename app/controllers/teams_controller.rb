@@ -1,13 +1,19 @@
 class TeamsController < ApplicationController
   
   def new
-    @invited_guest = User.new
     @user = User.find(params[:user_id])
+    @team = Team.new
   end
 
   def create
-    @invited_guest = User.new(invited_guest_params)
+    @user = User.find(params[:user_id])
+    @team = Team.new(team_params)
 
+    if @team.save
+      flash.now = "Team Created"
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -27,7 +33,7 @@ class TeamsController < ApplicationController
 
 private
   
-  def invited_guest_params
-    params.require(:user).permit(:first_name, :last_name, :email)
+  def team_params
+    params.require(:team).permit(:first_name, :last_name, :email)
   end
 end

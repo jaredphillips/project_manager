@@ -17,8 +17,10 @@ class UserFlowTest < ActionDispatch::IntegrationTest
 		fill_in "user[last_name]", with: user.last_name
 		fill_in "user[email]", with: user.email
 		fill_in "user[password]", with: user.password
-		click_button('Get Started')
-		assert_equal user_path(user), current_path
+		fill_in "user[password_confirmation]", with: user.password
+		find('.create-account').click
+		print page.html
+		assert has_content?('')
 	end
 
 	test "unsuccessful sign up" do
@@ -32,10 +34,9 @@ class UserFlowTest < ActionDispatch::IntegrationTest
 	test "user can add a picture after signing up" do
 		user = setup_signed_in_user
 		visit user_path(user)
-		print page.html
     path = File.join(Rails.root, 'app', 'assets', 'images', "me.jpg")
-    attach_file("avatar[user_avatar]", path)
-    click_button("Update User")
+    attach_file("user[avatar]", path)
+    click_button("Upload your image")
     assert_selector('img', count: 1) 
 	end
 end

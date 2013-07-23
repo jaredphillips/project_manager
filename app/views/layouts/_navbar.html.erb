@@ -3,7 +3,9 @@
     <div class="container">
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Home",    '#' %></li>
+          <% if logged_in? %>
+            <li><%= link_to "Dashboard", user_path(current_user) %></li>
+          <% end %>
           <li><%= link_to "Help",    '#' %></li>
           <li><%= link_to "Contact",    '#' %></li>
           <% if logged_in? %>

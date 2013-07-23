@@ -1,0 +1,25 @@
+<div class="center">
+	<div class="page-header">
+		<h4><%= @user.first_name %> <%= @user.last_name %><small> Honda of Canada</small></h4>
+	</div>
+	<div class="user-left-photo">
+		<% if @user.avatar.url == nil %>
+		  <%= image_tag "no_avatar.jpg" %>
+				<%= form_for @user, html: { :multipart => true } do |f| %>
+		    <%= f.file_field :avatar, { class: "default-small-buttons" } %>
+		  	<%= f.submit "Upload your image", { class: "default-small-buttons" } %>
+	  	<% end %>
+		<% else %>
+		  <%= image_tag @user.avatar.url %>
+		<% end %>
+	</div>
+	<div class="button">
+	  <%= link_to "New Project", new_user_project_path(@user), { class: "default-small-buttons" } %>
+	</div>
+	<div class="button">
+		<%= link_to 'Add Team Members', new_user_team_path(@user), { class: "default-small-buttons" } %> 
+	</div>
+	<div class="button">
+		<%= link_to 'Logout', :logout, { class: "default-small-buttons" } %>  
+	</div>	
+</div>

@@ -1,14 +1,11 @@
-<div class="dashboard">
-	<div class="page-header">
-		<h4>Dashboard<small>   Current Projects on the go.</small></h4>
-	</div>
-	<div class="projects" id="incomplete_projects">
-		<% @projects.each do |project| %>
-		<ul>
-			<ol><strong><%= project.title %></strong></ol>
-			<ol><%= project.objective %></ol>
-			<ol><%= project.due_date %></ol>	
-		</ul>
-		<% end %>
-	</div>
+<div class="row">
+  <div class="span3">
+  	<%= render 'users/left_user_show' %>
+  </div>
+  <div class="span6">
+  	<%= render 'users/center_user_show' %>
+  </div>
+  <div class="span3">
+  	<%= render 'users/right_user_show' %>
+  </div>
 </div>

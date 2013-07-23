@@ -29,6 +29,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @project = Project.find(user_id: @user)
   end
 
   def edit
