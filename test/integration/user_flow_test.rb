@@ -18,7 +18,7 @@ class UserFlowTest < ActionDispatch::IntegrationTest
 		fill_in "user[email]", with: user.email
 		fill_in "user[password]", with: user.password
 		click_button('Get Started')
-		assert_equal user, current_path
+		assert_equal user_path(user), current_path
 	end
 
 	test "unsuccessful sign up" do
@@ -34,7 +34,7 @@ class UserFlowTest < ActionDispatch::IntegrationTest
 		visit user_path(user)
 		print page.html
     path = File.join(Rails.root, 'app', 'assets', 'images', "me.jpg")
-    attach_file("user_avatar[user_avatar]", path)
+    attach_file("avatar[user_avatar]", path)
     click_button("Update User")
     assert_selector('img', count: 1) 
 	end
