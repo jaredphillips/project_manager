@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class TeamTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "user can create a team" do 
+  	use
+  end
 end

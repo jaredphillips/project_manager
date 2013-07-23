@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
 	before_save { self.email = email.downcase }
 
 	has_many :projects
-	belongs_to :team
-	
+	# belongs_to :team
+	has_many :teams
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
   validates :first_name, presence: true, length: { minimum: 2, maximum: 50 } 
