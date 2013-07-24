@@ -4,11 +4,10 @@
 	</div>
 	<div class="projects" id="incomplete_projects">
 		<% @projects.each do |project| %>
-			<div class="alert alert-block">
-	      <h4><%= link_to project.title, user_projects_path(@project), html: { class: "btn btn-large pull-right" } %></h4>
-	       <p><%= project.objective %></p>
-	       <p><%= project.due_date %></p>
-	    </div>
+			<div class="page-header">
+			  <h4><%= link_to project.title, user_project_path(@user, project) %> | <small><%= project.objective %></small> | <small><%= project.due_date %></small></h4>
+			</div>
 		<% end %>
 	</div>
 </div>
+

@@ -2,7 +2,7 @@ class TeamsController < ApplicationController
   
   def new
     @user = User.find(params[:user_id])
-    @team = Team.new
+    @team = Team.new()
   end
 
   def create
@@ -34,6 +34,6 @@ class TeamsController < ApplicationController
 private
   
   def team_params
-    params.require(:team).permit(:first_name, :last_name, :email)
+    params.require(:team).permit(:email, :user_id)
   end
 end

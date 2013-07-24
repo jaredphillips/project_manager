@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
-
   before_filter :load_user
+  before_filter :require_login
 
   def new
     @project = Project.new()
@@ -17,20 +17,18 @@ class ProjectsController < ApplicationController
     if @project.save 
       @user.add_role :admin, @project
       # UserMailer.reservation_confirmation(current_user).deliver
-      flash[:success] = "Project saved"
       redirect_to user_path(@user)
     else
-      flash[:error] = "Didn't save"
       render 'new'
     end
   end
 
   def index
-    @projects = Project.where(user_id: @user)
+    @projects = Project.where(user_id: @user).sorted_by(params[:project][:due_date])
   end
 
   def show
-    @project = Project.find(user_id: @user)
+    @project = Project.find(@user)
   end
 
   def edit
