@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  rolify
 
 	authenticates_with_sorcery!
 	before_save { self.email = email.downcase }

@@ -9,6 +9,9 @@ gem 'sqlite3'
 # Use sorcery for Authenication
 gem "sorcery", "~> 0.8.2"
 
+# Using rolify for creating user roles
+gem "rolify"
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

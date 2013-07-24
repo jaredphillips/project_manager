@@ -15,6 +15,7 @@ class ProjectsController < ApplicationController
     )
 
     if @project.save 
+      @user.add_role :admin, @project
       # UserMailer.reservation_confirmation(current_user).deliver
       flash[:success] = "Project saved"
       redirect_to user_path(@user)
