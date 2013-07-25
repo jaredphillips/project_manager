@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130724204750) do
+ActiveRecord::Schema.define(version: 20130725175405) do
+
+  create_table "invitations", force: true do |t|
+    t.integer "sender_id"
+    t.string  "recipient_email"
+    t.string  "token"
+  end
 
   create_table "projects", force: true do |t|
     t.string   "title"
@@ -69,6 +75,7 @@ ActiveRecord::Schema.define(version: 20130724204750) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "avatar"
+    t.integer  "invitation_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
 	has_many :tasks, through: :projects
 	has_many :teams
 
+	has_many :sent_invitations, class_name: 'Invitation', foreign_key: 'sender_id'
+	belongs_to :invitation
+
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
   validates :first_name, presence: true, length: { minimum: 2, maximum: 50 } 
