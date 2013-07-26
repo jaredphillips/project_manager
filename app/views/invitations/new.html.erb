@@ -1,10 +1,13 @@
-<%= form_for @invitation do |f| %>
-  <div class="field"> 
-		<%= f.label :recipient_email, "Email you like to invite?" %>
-		<%= f.text_field :recipient_email %></br>
-	</div>
+<div class="center hero-unit">
+	<h2>Invite someone to join your team</h2>
+	<%= form_for @invitation do |f| %>
+	  <div class="field"> 
+			<%= f.label :recipient_email, "Email" %>
+			<%= f.text_field :recipient_email %></br>
+		</div>
 
-  <div class="action"> 
-		<%= f.submit "Send Invite!" %>
-	</div>
-<% end %>
+	  <div class="action"> 
+			<%= f.submit "Send Invite!", class: "btn" %>
+		</div>
+	<% end %>
+</div>

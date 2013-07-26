@@ -2,25 +2,38 @@ require 'test_helper'
 
 class TeamFlowTest < ActionDispatch::IntegrationTest
 
-	test "user can create a team" do
+	def create_team
+		user = setup_signed_in_user
+  	visit	user_path(user)
+  	click_button('Create your team')
+  end
+
+  test "user can create a team" do
+  	user = setup_signed_in_user
+  	visit	user_path(user)
+  	assert has_no_content?('Invite Team Members'), "User is seeing Invite Team Members, they haven't created a team"
+  	assert has_content?('Create a team'),  "If you haven't created a team, you should see 'Create your team'"
+  	click_link('Create a team')
+  	assert has_content?('Back to Dashboard'), "User should have a button to get back to dashboard"
+  	assert_equal new_user_team_path(user), current_path, "User should also be on the create a team page"
+  end
+
+	test "user can invite team members" do
+		create_team
 		user = setup_signed_in_user
 		visit user_path(user)
-		click_link('Add Team Members')
-		assert has_content?('New Member')
-		team = FactoryGirl.build(:team)
-		
+		create_team
+		click_link('Invite Team Members')
+		assert has_content?("Invite someone to join your team"), "User should be prompted to invite someone to there team"
+		team_member = FactoryGirl.build(:team)
+		fill_in 'invitation[recipient_email]', with: "inviteduser@email.com"
+		click_button('Invite')
+		assert has_content?(user.first_name), "After clicking invite, user should be redirected back to there dashboard"
 	end
 end
 
-# test "after creating a project, it displays on users page" do
-# 		user = setup_signed_in_user
-# 		visit user_path(user)
-# 		click_link('New Project')
-# 		project = FactoryGirl.build(:project)
-# 		fill_in "project[title]", with: project.title
-# 	 	fill_in "project[objective]", with: project.objective
-# 	  fill_in "project[due_date]", with: project.due_date
-#     click_button "Get this project started"
-# 		assert_equal user_path(user), current_path, "After creating a project, user should be on the user path, not projects path"
-# 		assert has_content?('First Project Title'), "User should see project title just created listed on user page"
-# 	end
+
+# signup_url = @invitation.generate_token
+# 		send_email = InviteMailer.invitation(user, @invitation, signup_url).deliver
+# 		assert_equal [team_member.email], email.to
+# 		assert_equal "You've been invited to join the team", email.subject

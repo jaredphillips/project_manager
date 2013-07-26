@@ -15,8 +15,6 @@ class ProjectsController < ApplicationController
     )
 
     if @project.save 
-      @user.add_role :admin, @project
-      # UserMailer.reservation_confirmation(current_user).deliver
       redirect_to user_path(@user)
     else
       render 'new'

@@ -1,7 +1,9 @@
 <div class="center">
+
 	<div class="page-header">
 		<h4><%= @user.first_name %> <%= @user.last_name %><small> Honda of Canada</small></h4>
 	</div>
+
 	<div class="user-left-photo">
 		<% if @user.avatar.url == nil %>
 				<%= form_for @user, html: { :multipart => true } do |f| %>
@@ -12,10 +14,19 @@
 		  <%= image_tag @user.avatar.url %>
 		<% end %>
 	</div></br>
-	  <%= link_to "New Project", new_user_project_path(@user), { class: "btn btn-block" } %>
-		<%= link_to 'Invite Team Members', new_invitation_path, { class: "btn btn-block" } %> 
-		<%= link_to 'Logout', :logout, { class: "btn btn-warning btn-block" } %>  
 
+	<div class="action">
+	  <%= link_to "New project", new_user_project_path(@user), { class: "btn" } %>
+	</div>
+  <% if @user.teams.count == 0  %>
+    <div class="action">
+  		<%= link_to 'Invite team members', new_invitation_path, { class: "btn" } %>
+  	</div>
+	<% end %>
+	
+  <div class="action">
+		<%= link_to 'Logout', :logout, { class: "btn" } %>
+	</div>
 </div>
 
 

@@ -33,15 +33,16 @@ class ActionDispatch::IntegrationTest
 
   # This is a helper method we can call anywhere in the tests
   def setup_signed_in_user
-    pass = "this-is-a-password"
-    user = FactoryGirl.create :user, password: pass
+    password = "password"
+    user = FactoryGirl.create :user, password: password
 
     visit '/login'
     fill_in "user_email", with: user.email
-    fill_in "user_password", with: pass
+    fill_in "user_password", with: password
     click_button "Log in"
     user
   end
+
 
   def last_email
     ActionMailer::Base.deliveries.last
