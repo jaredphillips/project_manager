@@ -26,7 +26,7 @@ class TeamFlowTest < ActionDispatch::IntegrationTest
 		click_link('Invite Team Members')
 		assert has_content?("Invite someone to join your team"), "User should be prompted to invite someone to there team"
 		team_member = FactoryGirl.build(:team)
-		fill_in 'invitation[recipient_email]', with: "inviteduser@email.com"
+		fill_in 'invitation[email]', with: "inviteduser@email.com"
 		click_button('Invite')
 		assert has_content?(user.first_name), "After clicking invite, user should be redirected back to there dashboard"
 	end

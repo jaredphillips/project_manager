@@ -1,2 +1,14 @@
-<h1><%= @project.title %></h1>
-<h3><%= @project.objective %></h3>
+<div class="center hero-unit">
+	<h1>
+		<%= @project.title %>
+	</h1>
+	<h3>
+		<%= @project.objective %>
+	</h3>
+	<%= @members.each do |member| %>
+	  <%= member.email %>
+	  <% end %>
+    <div class="action">
+  		<%= link_to 'Invite team members', new_invitation_path, { class: "btn" } %>
+  	</div>
+</div>

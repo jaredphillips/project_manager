@@ -9,8 +9,6 @@ gem 'sqlite3'
 # Use sorcery for Authenication
 gem "sorcery", "~> 0.8.2"
 
-# Using rolify for creating user roles
-gem "rolify"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -49,7 +47,7 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-gem 'rolify'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

@@ -144,7 +144,6 @@ GEM
       json (~> 1.4)
     ref (1.0.5)
     rmagick (2.13.2)
-    rolify (3.2.0)
     sass (3.2.9)
     sass-rails (4.0.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -212,7 +211,6 @@ DEPENDENCIES
   pry-rails
   rails (= 4.0.0)
   rmagick (~> 2.13.2)
-  rolify
   sass-rails (~> 4.0.0)
   sdoc
   sorcery (~> 0.8.2)

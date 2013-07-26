@@ -8,6 +8,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(
+      ProjectMember.create
       user_id: params[:user_id],
       title: params[:project][:title],
       objective: params[:project][:objective],
@@ -26,7 +27,8 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find(@user)
+    @project = @user.projects.where(id: params[:id]).first
+    @members = ProjectMember.where(user_id: @user, project_id: params[:id])
   end
 
   def edit
