@@ -12,15 +12,10 @@
 		  <%= image_tag @user.avatar.url %>
 		<% end %>
 	</div></br>
-	<div class="button">
 	  <%= link_to "New Project", new_user_project_path(@user), { class: "btn btn-block" } %>
-	</div>
-	<div class="button">
 		<%= link_to 'Invite Team Members', new_invitation_path, { class: "btn btn-block" } %> 
-	</div>
-	<div class="button">
 		<%= link_to 'Logout', :logout, { class: "btn btn-warning btn-block" } %>  
-	</div>	
+
 </div>
 
 

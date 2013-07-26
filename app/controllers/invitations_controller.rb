@@ -7,7 +7,6 @@ class InvitationsController < ApplicationController
   	@invitation = Invitation.new(invitation_params)
   	if @invitation.save
       @invitation.sender = current_user
-      @user.team.build()
   		InviteMailer.invitation(current_user, @invitation, signup_url(@invitation.generate_token)).deliver
   		flash[:notice] = "Thank you, invitation sent."
   		redirect_to current_user

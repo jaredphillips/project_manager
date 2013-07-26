@@ -40,8 +40,6 @@ class ActionDispatch::IntegrationTest
     fill_in "user_email", with: user.email
     fill_in "user_password", with: pass
     click_button "Log in"
-
-    # No asserts because testing is not done inside of a helper method
     user
   end
 

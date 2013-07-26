@@ -1,10 +1,10 @@
-
 <%= form_for @invitation do |f| %>
-	<p>
+  <div class="field"> 
 		<%= f.label :recipient_email, "Email you like to invite?" %>
-		<%= f.text_field :recipient_email %>
-	</p>
-	<p>
+		<%= f.text_field :recipient_email %></br>
+	</div>
+
+  <div class="action"> 
 		<%= f.submit "Send Invite!" %>
-	</p>
+	</div>
 <% end %>
