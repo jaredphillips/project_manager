@@ -60,6 +60,7 @@ group :development do
 	gem 'meta_request'
 	gem 'better_errors'
 	gem 'pry-rails'
+	gem "letter_opener"
 end
 
 group :test do 
