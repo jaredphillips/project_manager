@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       auto_login(@user)
   		redirect_to user_path(@user)
   	else
-  		render :new
+  		render new_user_path
   	end
   end
 

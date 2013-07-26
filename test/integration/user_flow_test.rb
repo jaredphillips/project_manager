@@ -18,9 +18,8 @@ class UserFlowTest < ActionDispatch::IntegrationTest
 		fill_in "user[email]", with: user.email
 		fill_in "user[password]", with: user.password
 		fill_in "user[password_confirmation]", with: user.password
-		find('.create-account').click
-		print page.html
-		assert has_content?('')
+		click_button('Get Started')
+		assert has_content?(user.first_name)
 	end
 
 	test "unsuccessful sign up" do
@@ -28,7 +27,7 @@ class UserFlowTest < ActionDispatch::IntegrationTest
 		user = FactoryGirl.build(:user)
 		fill_in "user[email]", with: user.email
 		click_button('Get Started')
-		assert_equal signup_path, current_path
+		assert has_content?("Sign Up")
 	end
 
 	test "user can add a picture after signing up" do
