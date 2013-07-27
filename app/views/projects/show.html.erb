@@ -5,10 +5,16 @@
 	<h3>
 		<%= @project.objective %>
 	</h3>
-	<%= @members.each do |member| %>
-	  <%= member.email %>
+	<div class="action">
+		<%= link_to 'Create Tasks', new_invitation_path, { class: "btn" } %>
+	</div>
+	<div class="action">
+		<%= link_to 'Invite team members', new_invitation_path, { class: "btn" } %>
+	</div>
+	<% unless @members.nil? %>
+		<h4>Project Members</h4>
+		<% @members.each do |member| %>
+		  <%= member %>
 	  <% end %>
-    <div class="action">
-  		<%= link_to 'Invite team members', new_invitation_path, { class: "btn" } %>
-  	</div>
+  <% end %>
 </div>

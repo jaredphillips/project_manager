@@ -14,8 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
   	if @user.save
       if @invitation.present?
-        # ProjectMember.find(project_id: @invitation.project_id, user_id: @user.id)
-        ProjectMember.update(project_id: @invitation.project_id, user_id: @user.id)
+        ProjectMember.find(project_id: @invitation.project_id, user_id: @user.id)
       end
       auto_login(@user)
   		redirect_to user_path(@user)

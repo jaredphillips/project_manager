@@ -8,13 +8,11 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(
-      ProjectMember.create
       user_id: params[:user_id],
       title: params[:project][:title],
       objective: params[:project][:objective],
       due_date: params[:project][:due_date]
-    )
-
+  )
     if @project.save 
       redirect_to user_path(@user)
     else
@@ -23,12 +21,11 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.where(user_id: @user).sorted_by(params[:project][:due_date])
+    # @projects = Project.find(params[:id])
   end
 
   def show
-    @project = @user.projects.where(id: params[:id]).first
-    @members = ProjectMember.where(user_id: @user, project_id: params[:id])
+    @project = Project.find(params[:id])
   end
 
   def edit
