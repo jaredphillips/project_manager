@@ -7,14 +7,12 @@ class InvitationsController < ApplicationController
   	@invitation = Invitation.new(invitation_params)
   	if @invitation.save    
   		InviteMailer.invitation(current_user, @invitation, signup_with_token_url(@invitation.token)).deliver
-
   		flash[:notice] = "Thank you, invitation sent."
   		redirect_to current_user
   	else
   		render 'new'
   	end
   end
-
 
 private
 

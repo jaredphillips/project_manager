@@ -6,11 +6,11 @@
 		<%= @project.objective %>
 	</h3>
 	<div class="action">
-		<%= link_to 'Create Tasks', new_invitation_path, { class: "btn" } %>
-	</div>
+		<%= link_to 'Create Tasks', '#', { class: "btn" } %>
+	</div></br>
 	<div class="action">
 		<%= link_to 'Invite team members', new_invitation_path, { class: "btn" } %>
-	</div>
+	</div></br>
 	<% unless @members.nil? %>
 		<h4>Project Members</h4>
 		<% @members.each do |member| %>
