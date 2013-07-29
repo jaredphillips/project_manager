@@ -19,7 +19,6 @@ gem 'binding_of_caller'
 # Yep, half the internet is styled using Twitter Bootstrap
 gem "twitter-bootstrap-rails"
 
-
 # Using carrierwave for uploading of all sorts of junk
 gem "carrierwave", "~> 0.9.0"
 
@@ -58,6 +57,7 @@ group :development do
 	gem 'meta_request'
 	gem 'better_errors'
 	gem 'pry-rails'
+	#Using letter opener to send test emails in the browswer (instead of spamming yourself)
 	gem "letter_opener"
 end
 
