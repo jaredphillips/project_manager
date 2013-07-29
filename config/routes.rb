@@ -13,6 +13,7 @@ ProjectManager::Application.routes.draw do
   resources :users do
     resources :teams
     resources :projects
+    resources :tasks
   end
 
 

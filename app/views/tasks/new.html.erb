@@ -1,0 +1,18 @@
+<div class="center hero-unit">
+	<h2>Create a task for this project</h2>
+	<%= form_for [@project, @task] do |f| %>
+	  <div class="field"> 
+			<%= f.label :instructions, "Instructions" %>
+			<%= f.text_area :instructions %></br>
+		</div>
+
+	  <div class="date-field">			
+	  	<%= f.label :due_date, "Due date for this... " %>
+			<%= f.date_field :due_date %>
+	  </div></br>
+
+	  <div class="action"> 
+			<%= f.submit "Create Task!", class: "btn" %>
+		</div>
+	<% end %>
+</div>

@@ -3,9 +3,8 @@ class User < ActiveRecord::Base
 	authenticates_with_sorcery!
 	before_save { self.email = email.downcase }
 
-  belongs_to :project_members
-	has_many :project_members, through: :projects
-	has_many :projects
+  has_many :projects
+  has_many :tasks, through: :projects
 
   
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

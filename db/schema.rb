@@ -11,21 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130726205010) do
-
-  create_table "invitations", force: true do |t|
-    t.string  "token"
-    t.integer "project_id"
-    t.integer "email"
-  end
-
-  create_table "project_members", force: true do |t|
-    t.integer "project_id"
-    t.integer "user_id"
-  end
-
-  add_index "project_members", ["project_id"], name: "index_project_members_on_project_id"
-  add_index "project_members", ["user_id"], name: "index_project_members_on_user_id"
+ActiveRecord::Schema.define(version: 20130729190051) do
 
   create_table "projects", force: true do |t|
     t.string   "title"
@@ -57,7 +43,6 @@ ActiveRecord::Schema.define(version: 20130726205010) do
     t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "avatar"

@@ -6,7 +6,7 @@ class InvitationsController < ApplicationController
   def create
   	@invitation = Invitation.new(invitation_params)
   	if @invitation.save    
-  		InviteMailer.invitation(current_user, @invitation, signup_with_token_url(@invitation.token)).deliver
+  		InviteMailer.invitation(current_user, @invitation, signup_with_token_url(@invitation.token), project_id: project.id).deliver
   		flash[:notice] = "Thank you, invitation sent."
   		redirect_to current_user
   	else
@@ -17,7 +17,7 @@ class InvitationsController < ApplicationController
 private
 
 	def invitation_params
-		params.require(:invitation).permit(:user_id, :email, :token)
+		params.require(:invitation).permit(:user_id, :email, :token, :project_id)
 	end
 end
 
