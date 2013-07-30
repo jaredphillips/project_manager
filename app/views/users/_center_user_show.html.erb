@@ -5,7 +5,7 @@
 	<div class="projects" id="incomplete_projects">
 		<% @projects.each do |project| %>
 			<div class="page-header">
-			  <h4><%= link_to project.title, user_project_path(@user, project) %> | <small><%= project.objective %></small> | <small><%= project.due_date %></small></h4>
+			  <h4><%= link_to project.title, project_path(@user, project) %> | <small><%= project.objective %></small> | <small><%= project.due_date %></small></h4>
 			</div>
 		<% end %>
 	</div>

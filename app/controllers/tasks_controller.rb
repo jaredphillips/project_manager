@@ -8,7 +8,7 @@ class TasksController < ApplicationController
   def create
   	@task = Task.new(
   		project_id: @project.id,
-  		user_id: @user.id,
+  		user_id: current_user,
   		due_date: params[:task][:due_date],
   		instructions: params[:task][:instructions],
   		complete: false
@@ -22,6 +22,7 @@ class TasksController < ApplicationController
   end
 
   def show
+    @tasks = Task.find(params[:project_id])
   end
 
   
