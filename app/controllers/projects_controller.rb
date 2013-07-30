@@ -26,7 +26,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @tasks = Task.where(project: project.id)
+    @tasks = Task.where(project: @project)
   end
 
   def edit
@@ -41,6 +41,6 @@ class ProjectsController < ApplicationController
 private
 
   def load_user
-    @user = User.find(params[:id])
+    @user = User.where(params[:id])
   end
 end
