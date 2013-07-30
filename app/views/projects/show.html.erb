@@ -1,14 +1,8 @@
 <div class="hero-unit">
-		<h1><%= @project.title %></h1>
-		<h3><%= @project.objective %></h3>
-		<div class="action">
-			<%= link_to 'Create Tasks', new_user_task_path(@user), { class: "btn" } %>
-		</div>
-
-	<% unless @members.nil? %>
-		<h4>Project Members</h4>
-		<% @members.each do |member| %>
-		  <%= member %>
-	  <% end %>
-  <% end %>
+	<h1><%= @project.title %></h1>
+	<h3><%= @project.objective %></h3>
+	<div class="actions">
+		<%= link_to 'Todo for this project', new_user_project_task_path(@user, @project) %>
+	</div>
 </div>
+

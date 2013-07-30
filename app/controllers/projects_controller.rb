@@ -12,7 +12,8 @@ class ProjectsController < ApplicationController
       title: params[:project][:title],
       objective: params[:project][:objective],
       due_date: params[:project][:due_date]
-  )
+    )
+    
     if @project.save 
       redirect_to user_path(@user)
     else
@@ -25,8 +26,6 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    # @task = Task.find(params[:user.id])
-    # # @members = ProjectMember.where(params[:id])
   end
 
   def edit

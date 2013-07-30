@@ -5,17 +5,12 @@ class UsersController < ApplicationController
   end
   
   def new
-    @token = params[:invitation_token]
   	@user = User.new()
   end
 
   def create
-    @invitation = Invitation.where(token: params[:invitation_token]).first
     @user = User.new(user_params)
   	if @user.save
-      if @invitation.present?
-        ProjectMember.find(project_id: @invitation.project_id, user_id: @user.id)
-      end
       auto_login(@user)
   		redirect_to user_path(@user)
   	else
