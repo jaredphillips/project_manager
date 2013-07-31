@@ -3,11 +3,11 @@
 		<h4>Dashboard<small> Current Projects on the go.</small></h4>
 	</div>
 	<div class="projects">
-		<% if @projects.count == 0 %>
+<!-- 		<% if current_user.projects.count == 0 %>
 			<div class="action">
 			  <%= link_to "Get Started and Create a New Project", new_project_path, { class: "btn btn-success" } %>
 			</div>
-			<% else %>
+			<% else %> -->
 				<% @projects.each do |project| %>
 					<div class="page-header">
 					  <h4><%= link_to project.title, project_path(project) %> | <small><%= project.objective %></small> | <small><%= project.due_date %></small></h4>

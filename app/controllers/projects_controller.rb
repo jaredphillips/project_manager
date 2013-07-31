@@ -13,19 +13,19 @@ class ProjectsController < ApplicationController
     )
     
     if @project.save 
-      redirect_to user_path(@user)
+      redirect_to current_user
     else
-      
+
       render new_project_path
     end
   end
 
   def index
+    @projects = Projects.find(param[:id])
   end
 
   def show
-    @project = Project.find(params[:id])
-    @tasks = Task.where(project: @project)
+    @projects = Project.find(params[:id])
   end
 
   def edit
