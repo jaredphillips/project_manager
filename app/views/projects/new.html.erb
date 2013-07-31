@@ -1,7 +1,29 @@
-<div class="center">
+<div class="hero unit">
+	
 	<div class="page-header">
-		<h4>New Project <small>Create and invite your team.</small></h4>
+		<h1>New Project <small>Create and invite your team.</small></h1>
 	</div>
-	<%= render 'form' %>
+
+	<%= form_for [@user, @project] do |f| %>
+	  <div class="field"> 
+		  <%= f.label :title, "Title: " %>
+		  <%= f.text_field :title %>
+		</div></br>
+
+	  <div class="field">	  
+	  	<%= f.label :objective, "Objective: " %>
+		  <%= f.text_field :objective %>
+		</div></br>
+
+		<div class="date-field">			
+	  	<%= f.label :due_date %>
+			<%= f.date_field :due_date %>
+	  </div></br>
+		<div class="action">
+			<%= f.submit "Get Started", class: "btn btn-success" %>
+		</div>
+
+	<% end %>
+
 </div>
 

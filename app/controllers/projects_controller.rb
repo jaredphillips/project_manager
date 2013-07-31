@@ -1,6 +1,4 @@
 class ProjectsController < ApplicationController
-  before_filter :load_user
-  before_filter :require_login
 
   def new
     @project = Project.new()
@@ -17,7 +15,8 @@ class ProjectsController < ApplicationController
     if @project.save 
       redirect_to user_path(@user)
     else
-      render 'new'
+      
+      render new_project_path
     end
   end
 
@@ -37,10 +36,5 @@ class ProjectsController < ApplicationController
 
   def update
   end
-
-private
-
-  def load_user
-    @user = User.where(params[:id])
-  end
 end
+

@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-	before_filter :load_project
+	# before_filter :load_project
 
   def new
   	@task = Task.new()
@@ -27,21 +27,11 @@ class TasksController < ApplicationController
 
   
 
-private
+# private
 
-  def load_project
-  	@project = Project.find(params[:project_id])
-	end
-end
+#   def load_project
+#   	@project = Project.find(params[:project][:id])
+# 	end
+# end
 
-# Schema
 
-# create_table "tasks", force: true do |t|
-#     t.integer  "project_id"
-#     t.datetime "created_at"
-#     t.datetime "updated_at"
-#     t.integer  "user_id"
-#     t.datetime "due_date"
-#     t.string   "instructions"
-#     t.boolean  "complete",     default: false
-#   end
