@@ -1,18 +1,24 @@
-<header class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <nav>
-        <ul class="nav pull-right">
-          <% if logged_in? %>
-            <li><%= link_to "Dashboard", user_path(current_user) %></li>
-          <% end %>
-          <li><%= link_to "Help", help_path %></li>
-          <li><%= link_to "Contact", contact_path %></li>
-          <% if logged_in? %>
-            <li><%= link_to "Log out", logout_path %></li>
-          <% end %>
-        </ul>
-      </nav>
-    </div>
+<div class="container"
+  <div class="navbar navbar-fixed-top">
+    <ul class="nav nav-pills pull-right">
+      <% if logged_in? %>
+      <li>
+        <%= button_to "Dashboard", user_path(current_user), { class: "btn btn-primary navbar-btn btn-mini", method: :get } %>
+      </li>
+      <% end %>
+      <li>
+        <%= button_to "Help", help_path, { class: "btn btn-info navbar-btn btn-mini", method: :get } %>
+      </li>
+      <li>
+        <%= button_to "Contact", contact_path, { class: "btn btn-warning navbar-btn btn-mini", method: :get } %>
+      </li>
+      <% if logged_in? %>
+      <li>
+        <%= button_to "Log out", logout_path, { class: "btn btn-danger navbar-btn btn-mini", method: :get } %>
+      </li>
+      <% end %>
+    </ul>
   </div>
-</header>
+</div>
+
+

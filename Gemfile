@@ -16,8 +16,6 @@ gem 'sass-rails', '~> 4.0.0'
 # Holy shit
 gem 'binding_of_caller'
 
-# Yep, half the internet is styled using Twitter Bootstrap
-gem "twitter-bootstrap-rails"
 
 # Using carrierwave for uploading of all sorts of junk
 gem "carrierwave", "~> 0.9.0"
