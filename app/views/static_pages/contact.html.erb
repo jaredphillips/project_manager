@@ -1,11 +1,14 @@
-<div class="center">
+<div class="center hero-unit">
 	<h1>From Me To You - Help</h1>
 
 	<h4>Team projects managed, tracked and reported with ease</h4>
+
+	<p>
+		If you are interested in this app and have questions or comments, drop a line 
+		<%= mail_to "jaredtphillips@me.com", "Jared Phillips" %>.
+	</p>
 	
-	<p>Contact</p> 
+	<%= link_to 'Sign up', signup_path, class: "btn btn-large btn-primary" %>
 	
-	<%= link_to 'Sign up', signup_path, class: "medium secondary button round" %>
-	
-	<%= link_to 'Log in', login_path, class: "medium success button round" %>
+	<%= link_to 'Log in', login_path, class: "btn btn-large btn-success" %>
 </div>

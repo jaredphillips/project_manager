@@ -25,13 +25,17 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @tasks = @project.tasks.sort_by{ |date| date[:due_date] }
+    @tasks = @project.tasks
+    # @tasks = @project.tasks.sort_by{ |date| date[:due_date] }
   end
 
   def edit
   end
 
   def destroy
+    @project = Project.find(params[:id])
+    @project.destroy
+    redirect_to current_user
   end
 
   def update

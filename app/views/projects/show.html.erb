@@ -1,10 +1,11 @@
 <div class="hero-unit">
-	<h2><%= @project.title %></h2>
-	<h3><%= @project.objective %></h3>
+	<div class="page-header">
+		<h2><%= @project.title %><small> <%= @project.objective %></small></h2>
+	</div>
 	<div class="actions">
-		<%= link_to 'Todo for this project', new_project_task_path(@project), class: "btn btn-large btn-success" %>
+		<%= link_to 'Todo for this project', new_project_task_path(@project), class: "btn btn-info" %>
 	</div></br>
-	<% if @tasks.count > 1 %>
+	<% if @tasks.count > 0 %>
 	<table class="table">
 	  	<thead>
 	  		<tr>
@@ -21,7 +22,7 @@
 		  			<%= task.instructions %>
 		  		</td>
 		  		<td>
-		  			<%= task.due_date %>
+		  			<%= task.due_date.strftime("%Y-%d-%m") %>
 	  		  </td>
 	  		  <td>
 		  			Team Member Assigned
@@ -30,7 +31,7 @@
 			  		<% if task.complete == false %>
 			  			<%= link_to 'Completed', edit_project_task_path(@project, task.id), class: "btn btn-warning" %>
 		  			<% else %>
-		  			  <%= link_to 'Remove', '#', class: "btn btn-success" %>
+		  			  <%= link_to 'Remove', project_task_path(@project, task.id), { class: "btn btn-success", method: :delete } %>
 	  			  <% end %>
 		  		</td>
 	  		</tr>
