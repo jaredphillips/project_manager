@@ -13,7 +13,6 @@ class TasksController < ApplicationController
   		instructions: params[:task][:instructions],
   		complete: false
   	)
-  	binding.pry
   	if @task.save
   		redirect_to @project
   	else

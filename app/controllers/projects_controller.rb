@@ -26,7 +26,11 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @tasks = @project.tasks
+    if @tasks == nil
+      @tasks = @project.tasks
+    else
+      @tasks = @project.tasks.sort_by{ |organize_by| organize_by[:due_date] }
+    end
   end
 
   def edit

@@ -1,13 +1,41 @@
 <div class="hero-unit">
-	<h1><%= @project.title %></h1>
+	<h2><%= @project.title %></h2>
 	<h3><%= @project.objective %></h3>
-	<% @tasks.each do |task| %>
-	  <ul>
-	  	<ol>Task: <%= task.instructions %></ol>
-	  </ul>
-  <% end %>
 	<div class="actions">
 		<%= link_to 'Todo for this project', new_project_task_path(@project), class: "btn btn-large btn-success" %>
-	</div>
+	</div></br>
+	<% if @tasks.count > 1 %>
+	<table class="table">
+	  	<thead>
+	  		<tr>
+	  			<th>Task</th>
+	  			<th>Due Date</th>
+	  			<th>Team Member</th>
+	  			<th>Completed</th>
+	  		</tr>
+	  	</thead>
+		<% @tasks.each do |task| %>
+	  	<tbody>
+	  		<tr>
+	  			<td>
+		  			<%= task.instructions %>
+		  		</td>
+		  		<td>
+		  			<%= task.due_date %>
+	  		  </td>
+	  		  <td>
+		  			Team Member Assigned
+		  		</td>
+			  	<td>
+			  		<% if task.complete == false %>
+			  			<%= link_to 'Not Complete', '#', class: "btn btn-warning" %>
+		  			<% else %>
+			  			<%= link_to 'Not Complete', '#', class: "btn btn-success" %>
+		  			<% end %>
+		  		</td>
+	  		</tr>
+	  	</tbody>
+	  	<% end %>
+	<% end %>
 </div>
 
