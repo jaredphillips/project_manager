@@ -28,10 +28,10 @@
 		  		</td>
 			  	<td>
 			  		<% if task.complete == false %>
-			  			<%= link_to 'Not Complete', '#', class: "btn btn-warning" %>
+			  			<%= link_to 'Completed', edit_project_task_path(@project, task.id), class: "btn btn-warning" %>
 		  			<% else %>
-			  			<%= link_to 'Not Complete', '#', class: "btn btn-success" %>
-		  			<% end %>
+		  			  <%= link_to 'Remove', '#', class: "btn btn-success" %>
+	  			  <% end %>
 		  		</td>
 	  		</tr>
 	  	</tbody>

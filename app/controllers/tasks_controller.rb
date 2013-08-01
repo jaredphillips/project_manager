@@ -24,6 +24,14 @@ class TasksController < ApplicationController
     @tasks = Task.find(params[:project_id])
   end
 
+  def edit
+    if @tasks = Task.find(params[:id]).update_attribute(:complete, true)
+      redirect_to @project
+    else
+      'Nope'
+    end
+  end
+
 private
 
   def load_project

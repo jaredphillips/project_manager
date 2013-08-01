@@ -15,7 +15,6 @@ class ProjectsController < ApplicationController
     if @project.save 
       redirect_to current_user
     else
-
       render new_project_path
     end
   end
@@ -26,11 +25,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    if @tasks == nil
-      @tasks = @project.tasks
-    else
-      @tasks = @project.tasks.sort_by{ |organize_by| organize_by[:due_date] }
-    end
+    @tasks = @project.tasks.sort_by{ |date| date[:due_date] }
   end
 
   def edit
