@@ -1,13 +1,13 @@
 <div class="hero-unit">
 	<h1><%= @project.title %></h1>
 	<h3><%= @project.objective %></h3>
-	<%= @tasks.each do |task| %>
+	<% @tasks.each do |task| %>
 	  <ul>
-	  	<li>task</li>
+	  	<ol>Task: <%= task.instructions %></ol>
 	  </ul>
   <% end %>
 	<div class="actions">
-		<%= link_to 'Todo for this project', new_project_task_path(@user, @project), class: "btn btn-large btn-success" %>
+		<%= link_to 'Todo for this project', new_project_task_path(@project), class: "btn btn-large btn-success" %>
 	</div>
 </div>
 

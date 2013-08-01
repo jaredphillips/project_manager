@@ -21,11 +21,12 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Projects.find(param[:id])
+    @projects = Projects.where(params[:id])
   end
 
   def show
-    @projects = Project.find(params[:id])
+    @project = Project.find(params[:id])
+    @tasks = @project.tasks
   end
 
   def edit
