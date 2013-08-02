@@ -6,9 +6,9 @@
 	<%= link_to "Let's get started with a project", new_project_path, { class: "btn btn-large btn-block btn-info" } %>
 <% else %>
 	<% @projects.each do |project| %>
-		<div class="alert alert-success">
+		<div class="project-card-in-the-dashboard">
 		  <h4><%= link_to project.title, project_path(project) %>
-		  	<%= link_to "Remove Project", project_path(project), { class: "btn pull-right", confirm: 'Are you sure?', method: :delete } %>
+		  	<%= link_to "Remove Project", project_path(project), { class: "btn pull-right btn btn-success", confirm: 'Are you sure?', method: :delete } %>
 		  </h4>
 		  <p><%= project.due_date.strftime("%Y-%d-%m") %></p>
 		</div>

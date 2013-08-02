@@ -1,6 +1,6 @@
-<form class="form-horizontal">
+<div class="form-horizontal", id="form-styling-override">
   <h1>Sign Up</h1></br>
-  <%= form_for @user do |f| %>
+  <%= form_for @user  do |f|  %>
     <%= render 'layouts/error_messages' %>
 
     <div class="field" id="individual-form-elements-override">
@@ -16,7 +16,11 @@
     <div class="field" id="individual-form-elements-override">
       <%= f.label :email %>
       <%= f.text_field :email, { class: "form-control" } %>
-    </div>
+    </div></br>
+
+    <div class="action" id="individual-form-elements-override">
+      <%= f.file_field :avatar, { class: "upload-button" } %>
+    </div></br>
 
     <div class="field" id="individual-form-elements-override">
       <%= f.label :password %>   
@@ -29,8 +33,8 @@
     </div> 
 
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit "Create Account", {  class: "form-submit-button-override btn btn-success" }  %>
     </div> 
 
   <% end %>
-</form>
+</div>

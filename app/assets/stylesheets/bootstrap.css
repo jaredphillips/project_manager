@@ -4693,29 +4693,36 @@ td.visible-print {
 
 /* My custom styles */
 
+.all-pages {
+  padding-top: 80px;
+}
+
 
 /* Profile photo looks in style now*/
 #user-left-photo {
   height: 100px;
-  widthL 100px;
+  width: 100px;
   border-radius: 7px;
 }
 
 /* Individual navbar buttons need better spacing than default */
-#navbar-buttons{
-  padding-right: 3px;
-  padding-left: 3px;
+#navbar-buttons {
+  padding-top: 10px; 
+  padding-right: 10px;
   padding-bottom: 10px;
-  padding-top: 10px;
+  padding-left: 10px;
 }
 
 #navbar-override {
-  height: 70px;
 }
 
 #static-page-main-container {
-  padding-top: 100px;
+  padding-bottom: 60px;
   text-align: center;
+/*  -moz-box-shadow:    7px 7px 5px 6px #ccc;*/
+  /*-webkit-box-shadow: 7px 7px 5px 6px #ccc;*/
+  box-shadow:         0px 10px 10px 0px #ccc;
+
 }
 
 #static-page-main-container h1 {
@@ -4729,13 +4736,30 @@ td.visible-print {
 }
 
 /* Overriding the main form container style */
-
+#form-styling-override {
+  padding-top: 100px;
+}
 
 /* Overriding form styles */
 #individual-form-elements-override {
   text-align: left;
   width: 400px;
 }
+
+/* Changing the default button */
+.form-submit-button-override {
+  margin-top: 14px;
+}
+
+.project-card-in-the-dashboard {
+  border: 2px solid #d9534f ;
+  padding: 5px;
+  border-radius: 6px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+
 
 
 
