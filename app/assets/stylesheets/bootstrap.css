@@ -4735,11 +4735,6 @@ td.visible-print {
   font-size: 20px;
 }
 
-/* Overriding the main form container style */
-#form-styling-override {
-  padding-top: 100px;
-}
-
 /* Overriding form styles */
 #individual-form-elements-override {
   text-align: left;

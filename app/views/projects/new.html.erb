@@ -1,26 +1,25 @@
-<div class="hero-unit">
-	
+<div class="form-horizontal", id="form-styling-override">
 	<div class="page-header">
-		<h1>New Project <small>Create and invite your team.</small></h1>
+		<h1>New Project <small>Create a new project before sharing it with your team</small></h1>
 	</div>
 
 	<%= form_for [@user, @project] do |f| %>
-	  <div class="field"> 
+	  <div class="field individual-form-elements-override">
 		  <%= f.label :title, "Title: " %>
 		  <%= f.text_field :title %>
 		</div></br>
 
-	  <div class="field">	  
+	  <div class="field individual-form-elements-override">
 	  	<%= f.label :objective, "Objective: " %>
 		  <%= f.text_field :objective %>
 		</div></br>
 
-		<div class="date-field">			
+		<div class="date-field individual-form-elements-override">			
 	  	<%= f.label :due_date %>
 			<%= f.date_field :due_date %>
 	  </div></br>
 	  
-		<div class="action">
+		<div class="action individual-form-elements-override">
 			<%= f.submit "Get Started", class: "btn btn-success" %>
 		</div>
 
