@@ -2,36 +2,35 @@
   <h1>Sign Up</h1></br>
   <%= form_for @user do |f| %>
     <%= render 'layouts/error_messages' %>
-    <div class="form-group">
-      <label for="inputFirstName" class="col-lg-2 control-label">First Name</label>
-      <div class="col-lg-4">
-        <%= f.text_field :first_name, { class: "form-control", placeholder: "First Name" } %>
-      </div>
+
+    <div class="field" id="individual-form-elements-override">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, { class: "form-control" } %>
     </div>
-    <div class="form-group">
-      <label for="inputLastName" class="col-lg-2 control-label">Last Name</label>
-      <div class="col-lg-4">
-        <%= f.text_field :last_name, { class: "form-control", placeholder: "Last Name"} %>
-      </div>
+
+    <div class="field" id="individual-form-elements-override">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, { class: "form-control" } %>
     </div>
-    <div class="form-group">
-      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-      <div class="col-lg-4">
-        <%= f.text_field :email, { class: "form-control", placeholder: "Email" } %>
-      </div>
+
+    <div class="field" id="individual-form-elements-override">
+      <%= f.label :email %>
+      <%= f.text_field :email, { class: "form-control" } %>
     </div>
-    <div class="form-group">
-      <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-      <div class="col-lg-4">
-        <%= f.password_field :password, { class: "form-control", placeholder: "Password" } %>
-      </div>
+
+    <div class="field" id="individual-form-elements-override">
+      <%= f.label :password %>   
+      <%= f.password_field :password, { class: "form-control" } %>
     </div>
-    <div class="form-group">
-      <label for="inputPasswordConfirmation" class="col-lg-2 control-label">Password Confirmation</label>
-      <div class="col-lg-4">
-        <%= f.password_field :password, { class: "form-control", placeholder: "Password Confirmation" } %></br>
-        <button type="submit" class="btn btn-default">Sign up</button>
-      </div>  
-    </div>
+
+    <div class="field" id="individual-form-elements-override">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, { class: "form-control" } %>
+    </div> 
+
+    <div class="actions">
+      <%= f.submit %>
+    </div> 
+
   <% end %>
 </form>

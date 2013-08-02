@@ -2,20 +2,20 @@
 	<div class="page-header">
 		<h4><%= @user.first_name %> <%= @user.last_name %><small> Honda of Canada</small></h4>
 	</div>
-	<div class="user-left-photo">	
-		  <%= image_tag @user.avatar.url %>
+	<div id="user-left-photo">	
+		  <%= image_tag @user.avatar.url, { id: "user-left-photo" } %>
 	</div></br>
 
 	<div class="action">
-	  <%= link_to "New project", new_project_path, { class: "btn btn-block btn-success" } %>
+	  <%= link_to "New project", new_project_path, { class: "btn btn-large btn-success" } %>
 	</div></br>
 
 	<div class="action">
-		<%= link_to "Invite Team Member", '#', { class: "btn btn-block btn-warning" } %>
+		<%= link_to "Invite Team Member", '#', { class: "btn btn-large btn-warning" } %>
 		</div></br>
   
   <div class="action">
-		<%= link_to "Log out", logout_path, { class: "btn btn-block btn-danger" } %>
+		<%= link_to "Log out", logout_path, { class: "btn btn-large btn-danger" } %>
 	</div></br>
 
 	<div class="span2">

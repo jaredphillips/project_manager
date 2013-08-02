@@ -1,24 +1,22 @@
-<div class="container"
-  <div class="navbar navbar-fixed-top">
-    <ul class="nav nav-pills pull-right">
-      <% if logged_in? %>
-      <li>
-        <%= button_to "Dashboard", user_path(current_user), { class: "btn btn-primary navbar-btn btn-mini", method: :get } %>
-      </li>
-      <% end %>
-      <li>
-        <%= button_to "Help", help_path, { class: "btn btn-info navbar-btn btn-mini", method: :get } %>
-      </li>
-      <li>
-        <%= button_to "Contact", contact_path, { class: "btn btn-warning navbar-btn btn-mini", method: :get } %>
-      </li>
-      <% if logged_in? %>
-      <li>
-        <%= button_to "Log out", logout_path, { class: "btn btn-danger navbar-btn btn-mini", method: :get } %>
-      </li>
-      <% end %>
-    </ul>
-  </div>
+<div class="navbar navbar-fixed-top" id="navbar-override">
+  <ul class="nav nav-pills pull-right">
+    <% if logged_in? %>
+    <li id="navbar-buttons">
+      <%= button_to "Dashboard", user_path(current_user), { class: "btn btn-primary navbar-btn btn-small", method: :get } %>
+    </li>
+    <% end %>
+    <li id="navbar-buttons">
+      <%= button_to "Help", help_path, { class: "btn btn-info navbar-btn btn-small", method: :get } %>
+    </li>
+    <li id="navbar-buttons">
+      <%= button_to "Contact", contact_path, { class: "btn btn-warning navbar-btn btn-small", method: :get  } %>
+    </li>
+    <% if logged_in? %>
+    <li id="navbar-buttons">
+      <%= button_to "Log out", logout_path, { class: "btn btn-danger navbar-btn btn-small", method: :get } %>
+    </li>
+    <% end %>
+  </ul>
 </div>
 
 

@@ -1,27 +1,25 @@
-<form class="form-horizontal">
   <h1>Welcome back</h1></br>
   <%= form_for(@user, url: sessions_path) do |f| %>
     <%= render 'layouts/error_messages' %> 
     <%= render 'layouts/flash' %>
-    
-    <div class="form-group">
-      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-      <div class="col-lg-4">
-        <%= f.text_field :email, { class: "form-control", placeholder: "Email" } %>
-      </div>
+
+
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
     </div>
 
-    <div class="form-group">
-      <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-      <div class="col-lg-4">
-        <%= f.password_field :password, { class: "form-control", placeholder: "Password" } %></br>
-        <%= f.submit "Log in", { class: "btn btn-default btn-primary" } %>
-      </div>
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Log in" %>
     </div>
 
   <% end %>
   
   <p>You should bookmark this page for faster access in the future</p>
-</form>
 
 

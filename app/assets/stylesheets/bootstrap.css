@@ -4690,3 +4690,64 @@ td.visible-print {
     display: none !important;
   }
 }
+
+/* My custom styles */
+
+
+/* Profile photo looks in style now*/
+#user-left-photo {
+  height: 100px;
+  widthL 100px;
+  border-radius: 7px;
+}
+
+/* Individual navbar buttons need better spacing than default */
+#navbar-buttons{
+  padding-right: 3px;
+  padding-left: 3px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+#navbar-override {
+  height: 70px;
+}
+
+#static-page-main-container {
+  padding-top: 100px;
+  text-align: center;
+}
+
+#static-page-main-container h1 {
+  font-size: 45px;
+  font-weight: bold;
+}
+
+#static-page-main-container p {
+  padding-top: 40px;
+  font-size: 20px;
+}
+
+/* Overriding the main form container style */
+
+
+/* Overriding form styles */
+#individual-form-elements-override {
+  text-align: left;
+  width: 400px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
