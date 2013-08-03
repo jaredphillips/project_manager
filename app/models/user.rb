@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 
   has_many :projects
   has_many :tasks, through: :projects
+  has_one :team
 
   
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
