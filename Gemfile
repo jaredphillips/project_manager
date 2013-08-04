@@ -9,6 +9,8 @@ gem 'sqlite3'
 # Use sorcery for Authenication
 gem "sorcery", "~> 0.8.2"
 
+# Use cocoon for nested forms
+gem "cocoon", "~> 1.2.0"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

@@ -1,22 +1,22 @@
-<div class="form-horizontal", id="form-styling-override">
+<div class="form-horizontal" id="form-styling-override">
 	<div class="page-header">
 		<h1>New Project <small>Create a new project before sharing it with your team</small></h1>
 	</div>
 
 	<%= form_for [@user, @project] do |f| %>
-	  <div class="field individual-form-elements-override">
+    <div class="field" id="individual-form-elements-override">
 		  <%= f.label :title, "Title: " %>
-		  <%= f.text_field :title %>
+		  <%= f.text_field :title, { class: "form-control" } %>
 		</div></br>
 
-	  <div class="field individual-form-elements-override">
+    <div class="field" id="individual-form-elements-override">
 	  	<%= f.label :objective, "Objective: " %>
-		  <%= f.text_field :objective %>
+		  <%= f.text_field :objective, { class: "form-control" } %>
 		</div></br>
 
-		<div class="date-field individual-form-elements-override">			
+    <div class="field" id="individual-form-elements-override">
 	  	<%= f.label :due_date %>
-			<%= f.date_field :due_date %>
+			<%= f.date_field :due_date, { class: "form-control" } %>
 	  </div></br>
 	  
 		<div class="action individual-form-elements-override">

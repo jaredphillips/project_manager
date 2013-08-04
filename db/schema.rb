@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130803125054) do
+ActiveRecord::Schema.define(version: 20130804204652) do
+
+  create_table "invites", force: true do |t|
+    t.string   "email"
+    t.integer  "team_id"
+    t.boolean  "accepted"
+    t.string   "token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "mass_invite_id"
+  end
+
+  add_index "invites", ["mass_invite_id"], name: "index_invites_on_mass_invite_id"
+  add_index "invites", ["team_id"], name: "index_invites_on_team_id"
+
+  create_table "mass_invites", force: true do |t|
+    t.integer  "team_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "mass_invites", ["team_id"], name: "index_mass_invites_on_team_id"
 
   create_table "projects", force: true do |t|
     t.string   "title"
@@ -37,6 +58,16 @@ ActiveRecord::Schema.define(version: 20130803125054) do
 
   add_index "tasks", ["project_id"], name: "index_tasks_on_project_id"
 
+  create_table "team_members", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "team_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "team_members", ["team_id"], name: "index_team_members_on_team_id"
+  add_index "team_members", ["user_id"], name: "index_team_members_on_user_id"
+
   create_table "teams", force: true do |t|
     t.integer "user_id"
     t.string  "team_name"
@@ -50,9 +81,6 @@ ActiveRecord::Schema.define(version: 20130803125054) do
     t.datetime "updated_at"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "avatar"
-    t.integer  "invitation_id"
-    t.integer  "team_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

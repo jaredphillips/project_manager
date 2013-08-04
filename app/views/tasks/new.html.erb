@@ -1,15 +1,15 @@
-<div class="hero-unit">
+<div class="form-horizontal" id="form-styling-override">
 	<h2>Create a task for <%= @project.title %></h2>
 		<%= form_for [@project, @task] do |f| %>
-		  <div class="field"> 
+		  <div class="field" id="individual-form-elements-override"> 
 				<%= f.label :instructions, "Instructions" %>
-				<%= f.text_area :instructions, rows: 6	 %></br>
+				<%= f.text_area :instructions, { class: "form-control", rows: 6 }	 %></br>
 			</div>
 
-		  <div class="date-field">			
+		  <div class="date-field" id="individual-form-elements-override">			
 		  	<%= f.label :due_date, "Due date for this... " %>
-				<%= f.date_field :due_date %>
-		  </div>
+				<%= f.date_field :due_date, { class: "form-control" } %>
+		  </div></br>
 
 		  <div class="action"> 
 				<%= f.submit "Create Task!", class: "btn btn-success" %>

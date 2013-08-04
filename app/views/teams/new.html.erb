@@ -1,0 +1,14 @@
+<div class="form-horizontal", id="form-styling-override">
+	<h1>Name for your team: </h1>
+	<%= form_for [current_user, @team] do |f| %>
+
+		<div class="field" id="individual-form-elements-override">
+	    <%= f.label :team_name %>
+	    <%= f.text_field :team_name, { class: "form-control" } %>
+	  </div>
+
+	  <div class="actions">
+	    <%= f.submit "Get Started", {  class: "form-submit-button-override btn btn-success" }  %>
+	  </div>
+	<% end %>
+</div>

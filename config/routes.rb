@@ -7,9 +7,13 @@ ProjectManager::Application.routes.draw do
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
-
+  get "users/new/:token" => "users#new_invited", as: "new_invited"  
   
-  resources :users
+  resources :users do
+    resources :teams do
+      resources :mass_invites, only: [:create, :new]
+    end
+  end
 
   resources :projects do 
       resources :tasks

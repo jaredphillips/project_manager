@@ -2,18 +2,18 @@
   <ul class="nav nav-pills pull-right">
     <% if logged_in? %>
     <li id="navbar-buttons">
-      <%= button_to "Dashboard", user_path(current_user), { class: "btn btn-primary navbar-btn btn-small", method: :get } %>
+      <%= button_to "Dashboard", user_path(current_user), { class: "btn btn-primary navbar-btn btn-small buttons-for-user-dashboard", method: :get } %>
     </li>
     <% end %>
     <li id="navbar-buttons">
-      <%= button_to "Help", help_path, { class: "btn btn-info navbar-btn btn-small", method: :get } %>
+      <%= button_to "Help", help_path, { class: "btn btn-info navbar-btn btn-small buttons-for-user-dashboard", method: :get } %>
     </li>
     <li id="navbar-buttons">
-      <%= button_to "Contact", contact_path, { class: "btn btn-warning navbar-btn btn-small", method: :get  } %>
+      <%= button_to "Contact", contact_path, { class: "btn btn-warning navbar-btn btn-small buttons-for-user-dashboard", method: :get  } %>
     </li>
     <% if logged_in? %>
     <li id="navbar-buttons">
-      <%= button_to "Log out", logout_path, { class: "btn btn-danger navbar-btn btn-small", method: :get } %>
+      <%= button_to "Log out", logout_path, { class: "btn btn-danger navbar-btn btn-small buttons-for-user-dashboard", method: :get } %>
     </li>
     <% end %>
   </ul>

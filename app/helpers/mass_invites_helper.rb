@@ -1,0 +1,2 @@
+module MassInvitesHelper
+end

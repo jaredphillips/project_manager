@@ -12,6 +12,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
   	if @user.save
       auto_login(@user)
+      @invite = Invite.where(token: params[:token]).first
+      @team = @invite.team
+      @team.team_members.create(user: @user)
   		redirect_to user_path(@user)
   	else
   		render new_user_path
@@ -20,7 +23,7 @@ class UsersController < ApplicationController
 
   def show 
     @user = User.find(params[:id])
-    @projects = Project.all 
+    @projects = @user.projects
   end
 
   def update
@@ -30,6 +33,11 @@ class UsersController < ApplicationController
     else
       redirect_back_or_to user_path
     end
+  end
+
+  def new_invited
+    @invite = Invite.where(token: params[:token]).first
+    @user = User.new()
   end
 
 private

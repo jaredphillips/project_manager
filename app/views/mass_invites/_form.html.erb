@@ -1,0 +1,18 @@
+<div class="form-horizontal", id="form-styling-override">
+	<h1>Invite Team Members</h1>
+
+	<%= form_for [current_user, @team, @mass_invite] do |f| %>
+	  <div id="invites">
+		  <%= f.fields_for :invites do |builder| %>
+		    <%= render 'invite_fields', { f: builder } %>
+	    <% end %>
+	    <div class="links">
+	    	 <%= link_to_add_association '+', f, :invites %> 
+	    </div>
+	  </div>
+
+	  <div class="actions">
+	    <%= f.submit "Invite your team", {  class: "form-submit-button-override btn btn-success" }  %>
+	  </div>
+	<% end %>
+</div>

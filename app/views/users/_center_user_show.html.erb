@@ -8,7 +8,7 @@
 	<% @projects.each do |project| %>
 		<div class="project-card-in-the-dashboard">
 		  <h4><%= link_to project.title, project_path(project) %>
-		  	<%= link_to "Remove Project", project_path(project), { class: "btn pull-right btn btn-success", confirm: 'Are you sure?', method: :delete } %>
+		  	<%= link_to "Completed?", project_path(project), { class: "btn btn-small btn-success buttons-for-user-dashboard pull-right", confirm: 'Another one bites the dust?', method: :delete } %>
 		  </h4>
 		  <p><%= project.due_date.strftime("%Y-%d-%m") %></p>
 		</div>

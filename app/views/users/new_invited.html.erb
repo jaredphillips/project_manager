@@ -14,11 +14,6 @@
     </div>
 
     <div class="field" id="individual-form-elements-override">
-      <%= f.label :team_name %>
-      <%= f.text_field :last_name, { class: "form-control" } %>
-    </div>
-
-    <div class="field" id="individual-form-elements-override">
       <%= f.label :email %>
       <%= f.text_field :email, { class: "form-control" } %>
     </div>
@@ -36,6 +31,8 @@
     <div class="actions">
       <%= f.submit "Create Account", {  class: "form-submit-button-override btn btn-success" }  %>
     </div> 
+
+    <%= hidden_field_tag 'token', @invite.token %>
 
   <% end %>
 </div>
