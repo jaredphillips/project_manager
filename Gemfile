@@ -15,8 +15,11 @@ gem "cocoon", "~> 1.2.0"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
-# Holy shit
+# Holy smokes, provides console in better errors. 
 gem 'binding_of_caller'
+
+# Using jquery plug-ins like datepicker
+gem "jquery-ui-rails", "~> 4.0.4"
 
 
 # Using carrierwave for uploading of all sorts of junk
