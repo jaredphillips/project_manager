@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(
-      user_id: params[:user_id],
+      user_id: current_user.id,
       title: params[:project][:title],
       objective: params[:project][:objective],
       due_date: params[:project][:due_date]
@@ -26,7 +26,6 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @tasks = @project.tasks
-    # @tasks = @project.tasks.sort_by{ |date| date[:due_date] }
   end
 
   def edit

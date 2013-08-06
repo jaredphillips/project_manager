@@ -3,7 +3,7 @@
 	  <%= f.label :email %>
 	  <%= f.text_field :email, { class: "form-control" } %>
 	  <%= f.hidden_field :team_id, value: @team.id %>
-	</div>
-  <%= link_to_remove_association "-", f %>
+	</div></br>
+  <%= link_to_remove_association "-", f , { class: 'btn btn-warning' } %></br>
 </div>
 

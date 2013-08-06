@@ -2,7 +2,7 @@ class MassInvitesController < ApplicationController
   def new
     @team = Team.find(params[:team_id])
   	@mass_invite = MassInvite.new
-  	5.times do
+  	1.times do
   		@mass_invite.invites.build
   	end
   end
@@ -11,7 +11,7 @@ class MassInvitesController < ApplicationController
   	@team = Team.find(params[:team_id])
   	@mass_invite = @team.mass_invites.new(mass_invites_params)
   	if @mass_invite.save
-  		
+
   		redirect_to current_user
   	else
   		render 'new'
