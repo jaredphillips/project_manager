@@ -16,11 +16,11 @@
 
     <div class="field" id="individual-form-elements-override">
 	  	<%= f.label :due_date %>
-			<%= f.date_field :due_date, { class: "form-control" } %>
+			<%= f.text_field :due_date, { class: "form-control" } %>
 	  </div></br>
 	  
 		<div class="action individual-form-elements-override">
-			<%= f.submit "Get Started", class: "btn btn-success" %>
+			<%= f.submit "Get Started", { class: "btn btn-success" } %>
 		</div>
 
 	<% end %>

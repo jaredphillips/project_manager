@@ -4757,17 +4757,9 @@ td.visible-print {
   width: 90px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
+#project_due_date {
+  color: red;
+}
 
 
 
