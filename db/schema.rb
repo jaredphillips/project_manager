@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20130804204652) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "invites", force: true do |t|
     t.string   "email"
     t.integer  "team_id"
@@ -23,8 +26,8 @@ ActiveRecord::Schema.define(version: 20130804204652) do
     t.integer  "mass_invite_id"
   end
 
-  add_index "invites", ["mass_invite_id"], name: "index_invites_on_mass_invite_id"
-  add_index "invites", ["team_id"], name: "index_invites_on_team_id"
+  add_index "invites", ["mass_invite_id"], name: "index_invites_on_mass_invite_id", using: :btree
+  add_index "invites", ["team_id"], name: "index_invites_on_team_id", using: :btree
 
   create_table "mass_invites", force: true do |t|
     t.integer  "team_id"
@@ -32,7 +35,7 @@ ActiveRecord::Schema.define(version: 20130804204652) do
     t.datetime "updated_at"
   end
 
-  add_index "mass_invites", ["team_id"], name: "index_mass_invites_on_team_id"
+  add_index "mass_invites", ["team_id"], name: "index_mass_invites_on_team_id", using: :btree
 
   create_table "projects", force: true do |t|
     t.string   "title"
@@ -44,7 +47,7 @@ ActiveRecord::Schema.define(version: 20130804204652) do
     t.datetime "updated_at"
   end
 
-  add_index "projects", ["user_id"], name: "index_projects_on_user_id"
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id", using: :btree
 
   create_table "tasks", force: true do |t|
     t.integer  "project_id"
@@ -56,7 +59,7 @@ ActiveRecord::Schema.define(version: 20130804204652) do
     t.boolean  "complete",     default: false
   end
 
-  add_index "tasks", ["project_id"], name: "index_tasks_on_project_id"
+  add_index "tasks", ["project_id"], name: "index_tasks_on_project_id", using: :btree
 
   create_table "team_members", force: true do |t|
     t.integer  "user_id"
@@ -65,8 +68,8 @@ ActiveRecord::Schema.define(version: 20130804204652) do
     t.datetime "updated_at"
   end
 
-  add_index "team_members", ["team_id"], name: "index_team_members_on_team_id"
-  add_index "team_members", ["user_id"], name: "index_team_members_on_user_id"
+  add_index "team_members", ["team_id"], name: "index_team_members_on_team_id", using: :btree
+  add_index "team_members", ["user_id"], name: "index_team_members_on_user_id", using: :btree
 
   create_table "teams", force: true do |t|
     t.integer "user_id"
@@ -83,6 +86,6 @@ ActiveRecord::Schema.define(version: 20130804204652) do
     t.string   "last_name"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end

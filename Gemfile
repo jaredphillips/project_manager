@@ -3,9 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-
 # Moving this to postgres for production
 gem 'pg' 
 
@@ -65,6 +62,7 @@ group :development do
 	gem 'pry-rails'
 	#Using letter opener to send test emails in the browswer (instead of spamming yourself)
 	gem "letter_opener"
+	# Use sqlite3 as the database for Active Record
 end
 
 group :test do 
@@ -72,6 +70,7 @@ group :test do
 	gem 'capybara'
 	gem "database_cleaner" # used to "undo" any changes we made to the db during tests
   gem "capybara-webkit", '~> 1.0.0' # Capybara driver needed to handle JS
+	# Use sqlite3 as the database for Active Record
 end
 
 # Use ActiveModel has_secure_password
