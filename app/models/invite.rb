@@ -1,4 +1,5 @@
 class Invite < ActiveRecord::Base
+
   before_create :generate_token
 	after_create :send_email
 

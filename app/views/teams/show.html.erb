@@ -1,3 +1,3 @@
-<%= @team.team_name %>
+<h1>Team name: <%= @team.team_name %></h1></br>
 
-<%= link_to 'Invite Team Members', new_user_team_mass_invite_path(current_user, @team), id: "add_team_members" %>
+<h3><%= link_to 'Invite Team Members', new_user_team_mass_invite_path(current_user, @team), id: "add_team_members" %></h3>
