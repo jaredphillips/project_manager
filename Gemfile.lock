@@ -118,6 +118,7 @@ GEM
       jwt (~> 0.1.4)
       multi_json (~> 1.0)
       rack (~> 1.2)
+    pg (0.15.1)
     polyglot (0.3.3)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
@@ -209,6 +210,7 @@ DEPENDENCIES
   less-rails (~> 2.3.3)
   letter_opener
   meta_request
+  pg
   pry-rails
   rails (= 4.0.0)
   rmagick (~> 2.13.2)

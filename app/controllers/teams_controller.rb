@@ -20,6 +20,7 @@ class TeamsController < ApplicationController
 
   def show
   	@team = Team.find(params[:id])
+    @joined_teams = TeamMember.where(user: current_user).pluck(:team_id).map { |team_id| Team.find(team_id) }
   end
 
 

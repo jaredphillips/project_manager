@@ -1,5 +1,6 @@
-<% @teams.each do |team| %> 
-	<%= link_to team.team_name, user_team_path(current_user, team) %>
+<h1>Current Teams:</h1>
+<% @teams.each do |team| %>
+	<h3><%= link_to team.team_name, user_team_path(current_user, team) %></h3>
 <% end %>
 
 <% @joined_teams.each do |team| %> 
