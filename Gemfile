@@ -8,6 +8,9 @@ gem "rails", "4.0.0"
 # Moving this to postgres for production
 gem "pg"
 
+# Using jquery-turbolinks for proper document ready
+gem 'jquery-turbolinks'
+
 # Use sorcery for Authenication
 gem "sorcery", "~> 0.8.2"
 

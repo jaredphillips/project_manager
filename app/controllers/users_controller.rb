@@ -12,9 +12,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
   	if @user.save
       auto_login(@user)
-      @invite = Invite.where(token: params[:token]).first
-      @team = @invite.team
-      @team.team_members.create(user: @user)
+      # @invite = Invite.where(token: params[:token]).first
+      # @team = @invite.team.build
+      # @team.team_members.create(user: @user)
   		redirect_to user_path(@user)
   	else
   		render new_user_path
