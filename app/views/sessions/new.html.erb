@@ -1,7 +1,6 @@
 <div class="form-horizontal" id="form-styling-override">
   <h1>Welcome back</h1>
     <%= form_for(@user, url: sessions_path) do |f| %>
-      <%= render 'layouts/error_messages' %>
 
       <div class="field" id="individual-form-elements-override">
         <%= f.label :email %>
@@ -15,7 +14,7 @@
 
       <div class="actions">
         <%= f.submit "Log in", { class: "form-submit-button-override btn btn-success" } %>
-      </div>
+      </div></br>
 
     <% end %>
     <p>You should bookmark this page for faster access in the future</p>
