@@ -5,10 +5,10 @@
 <% else %>
 	<% @projects.each do |project| %>
 		<div class="project-card-in-the-dashboard">
-		  <h4><%= link_to project.title, project_path(project) %>
+		  <h2><%= link_to project.title, project_path(project) %><h5><%= project.objective %></h5>
 		  	<%= link_to "Completed?", project_path(project), { class: "btn btn-small btn-success buttons-for-user-dashboard pull-right", confirm: 'Another one bites the dust?', method: :delete } %>
-		  </h4>
-		  <p><%= project.due_date.strftime("%Y-%d-%m") %></p>
+		  </h2>
+		  <p><strong>Due Date: <%= project.due_date.strftime("%Y %d %m") %></strong></p>
 		</div>
 	<% end %>
 <% end %>
